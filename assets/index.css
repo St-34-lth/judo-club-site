@@ -1,0 +1,111 @@
+html,body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+body {
+  font: 1rem/1.5 var(--bs-font-sans-serif);
+}
+
+footer{
+          background-color: #973640;
+          margin:auto;
+          
+}
+.nav-link{
+          color:white;
+         ;
+}
+
+#carousel-controls
+{
+          /* position:relative; */
+          /* bottom:60px; */
+          opacity:0.4;
+          background-color:rgb(0,0,0);
+}
+#caption
+{
+          /* position:relative; */
+          /* top:10px;
+          left:10px; */
+}
+#judoButton
+{
+          width:40px;
+          height:30px;
+}
+#navigation-bar
+{
+          background-color: #973640;
+        
+}
+
+
+#header-border
+{
+         height:20px;
+}
+a.nav-link:hover, a.nav-link:active, a.nav-link.active
+{
+          color: var(--bs-black) ;
+}
+#main-image-container
+{
+          width:auto;
+          height:auto;
+          
+          margin:auto;
+          margin-bottom: 10px;
+          
+}
+#main-image
+{
+         
+          width:300px;
+          height:300px;
+          
+
+}
+#main-media-container
+{
+         min-height:65vh;
+}
+
+#main-footer-container
+{
+          min-height:5vh;
+          overflow:hidden;
+}
+/* #main-title
+{
+          text-align:center;
+          
+          left:100px;
+          font-size:1em;
+          
+          display:inline;
+          margin:0;
+          
+}
+
+#logo
+{
+          height:40px;
+          width:100px;
+          display:inline;
+          margin:0px;
+}
+
+
+#main-news > p{
+           text-align: center;
+}
+
+#left-news > p {
+          text-align: center;
+}
+
+#right-news > p {
+          text-align: center;
+}

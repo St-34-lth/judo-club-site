@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+          <head>
+                    <title>Athens Judo News Club</title>
+                    <link rel='icon' type='image/png' sizes='32x32' href='/assets/images/judo.png'>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                    <meta name="viewport" content="width=device-width, minimum-scale=.5">
+                    
+                    <link rel='stylesheet' type='text/css' href='./lib/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.css'>
+                    <script src='./lib/bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js'></script>
+                    <link rel='stylesheet' href='./assets/index.css'>
+                    <script src='./lib/handlebars-v4.7.7.js'></script>
+                    <script src='./lib/base.js'></script>
+          </head>
+
+
+<body onLoad='fill_base()'>
+          
+          <script type='text/x-handlebars-template' id='header'>
+                    <header>
+                    
+                              <div id='header-logo' class='.container bg-danger'>
+                                        <h1 class='text-white bg-danger' id='main-title'>Athens Judo club</h1>
+                                        <img id='logo' src='./assets/images/judo.png' width='150' height='140'>
+                              </div>
+                              <nav class="navbar navbar-expand-lg navbar-dark bg-danger" aria-label="Tenth navbar example">
+                                        <div class="container-fluid">
+                                                  <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                                                            data-bs-target="#navbarsExample08" aria-controls="navbarsExample08"
+                                                            aria-expanded="false" aria-label="Toggle navigation">
+                                                            <a class="navbar-brand" href=#'>
+                                                                      <img id='judoButton' src='./assets/images/judo.png' width='24'
+                                                                                height='24'>
+                                                            </a>
+                                                  </button>
+                    
+                                                  <div class="navbar-collapse justify-content-md-center collapse" id="navbarsExample08"
+                                                            style="">
+                                                            <ul class="navbar-nav">
+                                                                      <li class="nav-item">
+                                                                                
+                                                                                <a class="nav-link {{isNewsActive}}" aria-current="page"
+                                                                                          href="./News.html">Judo News</a>
+                                                                      </li>
+                                                                      
+                                                                      <li class="nav-item">
+                                                                                <a class="nav-link {{isHomeActive}}" href="./Home.html" tabindex="-1"
+                                                                                          aria-disabled="true">Home</a>
+                                                                      </li>
+                                                                      <li class="nav-item">
+                                                                                <a class="nav-link {{isMediaActive}}" href="./Media.html" tabindex="-1" aria-disabled="true">Media</a>
+                                                                      </li>
+                                                                      <li class="nav-item dropdown">
+                                                                                <a class="nav-link dropdown-toggle" href="#" id="dropdown08"
+                                                                                          data-bs-toggle="dropdown"
+                                                                                          aria-expanded="false">More</a>
+                                                                                <ul class="dropdown-menu" aria-labelledby="dropdown08">
+                                                                                          <li><a class="dropdown-item" href="#">Calendar</a>
+                                                                                          </li>
+                                                                                          <li class=>
+                                                                                                    <a class="dropdown-item" href="#">Join us!</a>
+                                                                                          </li>
+                                                                                          <li><a class="dropdown-item" href="#">Contact
+                                                                                                              us</a></li>
+                                                                                </ul>
+                                                                      </li>
+                                                            </ul>
+                                                  </div>
+                                        </div>
+                              </nav>
+                    </header>
+          </script>
+          <script>
+                    
+          </script>
+          <script type='text/x-handlebars-template'id='main'>
+                    
+                    <div id='news&info' class='container'>
+                              <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                              <div id='carousel-controls' class="carousel-indicators">
+                                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                                                  aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                                  aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                                  aria-label="Slide 3"></button>
+                              </div>
+                              <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                                  <img src="./assets/images/0eeab55e046a1dfc277f3fdf9db143e9.jpg" height='400' width='250'
+                                                            class="d-block w-100" alt="...">
+                                                  <div id='caption' class="carousel-caption d-none d-md-block">
+                                                            <h5 style='color:black'>First slide label</h5>
+                                                            <p style='color:black'>Some representative placeholder content for the
+                                                                      first slide.</p>
+                                                  </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                                  <img src="./assets/images/cute-boy-girls-doing-karate-judo-white-blue-kimono-children-practicing-martial-arts-vector-illustration-cute-boy-159896800.jpg"
+                                                            class="d-block w-100" width='250' height='400' alt="...">
+                                                  <div id='caption' class="carousel-caption d-none d-md-block">
+                                                            <h5 style='color:black'>Second slide label</h5>
+                                                            <p style='color:black;'>Some representative placeholder content for
+                                                                      the second slide.</p>
+                                                  </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                                  <img src="./assets/images/images.jpg" width='250' height='400' class="d-block w-100"
+                                                            alt="...">
+                                                  <div id='caption' class="carousel-caption d-none d-md-block">
+                                                            <h5 style='color:black'>Third slide label</h5>
+                                                            <p style='color:black'>Some representative placeholder content for the
+                                                                      third slide.</p>
+                                                  </div>
+                                        </div>
+                              </div>
+                              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                                        data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                              </button>
+                              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                                        data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                              </button>
+                              </div>
+                    </div>
+                    
+
+                    <main>
+ 
+                                        <div class='p-3 mg-2 bg-light text-dark row'>
+                                                            <div id='left-news' class='col'>
+                                                                      <p>Side News here</p>
+                                                                      <article>
+                                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus optio
+                                                                                recusandae deserunt aperiam itaque
+                                                                                consequuntur cupiditate beatae incidunt expedita natus saepe magni nostrum illum
+                                                                                vitae sit sint temporibus,
+                                                                                rem nulla accusantium. Repellendus cumque non neque excepturi ducimus sed quos
+                                                                                cum ipsum fugiat consequatur
+                                                                                repellat dolore, magnam doloremque quasi? Inventore, officia.</article>
+                                                            </div>
+                                                            <div id='main-news' class='col-6'>
+                                                                      <p>Main News here</p>
+                                                                      <article>
+                                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus optio
+                                                                                recusandae deserunt aperiam itaque consequuntur cupiditate beatae incidunt
+                                                                                expedita natus saepe magni nostrum illum vitae sit sint temporibus, rem nulla
+                                                                                accusantium. Repellendus cumque non neque excepturi ducimus sed quos cum ipsum
+                                                                                fugiat consequatur repellat dolore, magnam doloremque quasi? Inventore, officia.
+                                                                      </article>
+                                                            </div>
+                                                            <div id='right-news' class='col'>
+                                                                      <p>Side News here too</p>
+                                                                      <article>
+                                                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus optio
+                                                                                recusandae deserunt aperiam itaque
+                                                                                consequuntur cupiditate beatae incidunt expedita natus saepe magni nostrum illum
+                                                                                vitae sit sint temporibus,
+                                                                                rem nulla accusantium. Repellendus cumque non neque excepturi ducimus sed quos
+                                                                                cum ipsum fugiat consequatur
+                                                                                repellat dolore, magnam doloremque quasi? Inventore, officia.</article>
+                                                            </div>
+                                        </div>
+                                       
+                              
+                    </main>
+                    </script>
+                   
+                    <script type='text/x-handlebars-template' id='footer'>
+                              <footer>
+                              
+                                        <div class='container-fluid'>
+                                                  <div class='row'>
+                                                            <div class='col'>
+                                                                      <ul>
+                                                                                <ui>
+                                                                                          <img width='24' height='24'
+                                                                                                    src='./assets/images/bootstrap-icons/facebook.svg'>
+                                                                                </ui>
+                                                                                <img width='24' height='24'
+                                                                                          src='./assets/images/bootstrap-icons/instagram.svg'></ui>
+                              
+                                                                                </ui>
+                                                                      </ul>
+                              
+                                                            </div>
+                              
+                                                  </div>
+                              
+                                        </div>
+                              </footer>
+                    </script>
+                    <script>
+                              Handlebars.registerPartial('partialFooter', document.querySelector('#footer'))
+                    </script>
+          <div id='headerTarget'>
+          
+          </div>
+
+                    <div id='mainTarget'>
+
+                    </div>
+                    <div id='footerTarget'>
+
+                    </div>
+</body>
+
+          <footer>
+
+                    <div class='container-fluid'>
+                              <div class='row'>
+                                        <div class='col'>
+                                                  <ul>
+                                                            <ui>
+                                                                      <img width='24' height='24'
+                                                                                src='./assets/images/bootstrap-icons/facebook.svg'>
+                                                            </ui>
+                                                            <img width='24' height='24'
+                                                                      src='./assets/images/bootstrap-icons/instagram.svg'>
+                                                            </ui>
+
+                                                            </ui>
+                                                  </ul>
+
+                                        </div>
+
+                              </div>
+
+                    </div>
+          </footer>
+
+</html>

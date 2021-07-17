@@ -1,0 +1,8 @@
+1) make favicon white
+
+2) add alt texts & meta robot tags 
+
+
+3) fix footer display static bottom
+
+4) add text left and right from the logo ? 
