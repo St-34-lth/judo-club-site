@@ -6,3 +6,5 @@
 3) fix footer display static bottom
 
 4) add text left and right from the logo ? 
+
+5) resize images in the media section 

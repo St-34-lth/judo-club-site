@@ -16,7 +16,14 @@ footer{
           color:white;
          
 }
-
+#news_info
+{
+          width:100%;
+          margin:0px;
+          padding:0px;
+          max-width:100%;
+          
+}
 #carousel-controls
 {
           /* position:relative; */
@@ -79,6 +86,11 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           min-height:5vh;
           overflow:hidden;
 }
+
+.modal-body
+{
+          color:black;
+}
 /* #main-title
 {
           text-align:center;
@@ -111,3 +123,5 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 #right-news > p {
           text-align: center;
 }
+
+#

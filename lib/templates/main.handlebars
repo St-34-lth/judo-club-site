@@ -5,7 +5,40 @@
                               <h2>{{title}}</h2>
                               <p>{{welcomeText}}
                               </p>
-                              <button href=''class="btn btn-outline-light" type="button">Join us!</button>
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Join!
+                              </button>
+                              
+                              <!-- Modal -->
+                              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                                      <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                                aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                            <form action="">
+                                                                      <label for="fname">First name:</label>
+                                                                      <input type="text" id="fname" name="fname"><br><br>
+                                                                      <label for="lname">Last name:</label>
+                                                                      <input type="text" id="lname" name="lname"><br><br>
+                                                                      <input type="submit" value="Submit">
+                                                            </form>
+                                                            
+                                                            <p>Click the "Submit" button to complete your application form.</p>
+
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                      <button type="button" class="btn btn-secondary"
+                                                                                data-bs-dismiss="modal">Close</button>
+                                                                      <button type="button" class="btn btn-primary">Submit</button>
+                                                            </div>
+                                                  </div>
+                                        </div>
+                              </div>
+                              {{!-- <button onclick='test_button()' href=''class="btn btn-outline-light" type="button">Join us!</button> --}}
                     </div>
                   
                   
@@ -16,7 +49,7 @@
 <main>
           {{#if news}}
 
-          <div id='news&info' class='container'>
+          {{!-- <div id='news&info' class='container'>
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                               <div id='carousel-controls' class="carousel-indicators">
                                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
@@ -66,7 +99,7 @@
                                         <span class="visually-hidden">Next</span>
                               </button>
                     </div>
-          </div>
+          </div> --}}
 
           <div class='p-3 mg-2 bg-light text-dark row'>
                     <div id='left-news' class='col'>
