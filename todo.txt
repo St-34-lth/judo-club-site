@@ -8,3 +8,12 @@
 4) add text left and right from the logo ? 
 
 5) resize images in the media section 
+
+6) resize carousel height -- make image height responsive with JS ?
+
+7) stylize modal join us form 
+
+8) add maps section
+
+9)make social media button links or w/e 
+

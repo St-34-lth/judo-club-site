@@ -40,8 +40,7 @@
                               </div>
                               {{!-- <button onclick='test_button()' href=''class="btn btn-outline-light" type="button">Join us!</button> --}}
                     </div>
-                  
-                  
+       
 
 
 {{/if}}
@@ -167,4 +166,33 @@
           </div>
           {{/if}}
 
+          {{#if home}}
+          <div id='home-container' class='container'>
+                    <div class='row justify-content-center align-items-center bg-dark'>
+                              <div class='col-md-6'>
+                                     <a  id='news-1' class='news-col' href={{newsLink}}>
+                                    
+                                     </a>   
+                              </div>
+                              <div class='col-md-6'>
+                                        <a id='news-2' class='news-col' href={{newsLink}}>
+                                                
+                                        </a>
+                              </div>
+                              <div class='col-md-6'>
+                                        <a id='news-3' class='news-col' href={{newsLink}} style="background-image:url({{newsImage}});">
+                                                  
+                                        </a>
+                              </div>
+                              <div class='col-md-6'>
+                                        <a id='news-4' class='news-col'
+                                                  href={{newsLink}}
+                                                  style="background-image:url({{newsImage}});"
+                                                  >
+                              
+                                        </a>
+                              </div>
+                    </div>
+          </div>
+          {{/if}}
 </main>

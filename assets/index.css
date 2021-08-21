@@ -16,6 +16,35 @@ footer{
           color:white;
          
 }
+.news-col
+{
+          
+          background-size:cover;
+          width:540px;
+          height:300px;
+          display:inline-block;
+          margin:auto;
+          
+          
+}
+#home-container
+{
+          width:100%;
+          max-width:100%;
+          margin:0;
+          padding:0px;
+          text-align: center;
+          
+}
+#news-3
+{
+          /* background-image:url('https://www.eju.net/wp-content/uploads/2021/08/Gabi-Juan-Masters-2021-197408-1024x683.jpg'); */
+}
+#news-4
+{
+         
+          background-image:url('')
+}
 #news_info
 {
           width:100%;
