@@ -11,9 +11,16 @@
 
 6) resize carousel height -- make image height responsive with JS ?
 
-7) stylize modal join us form 
+7) stylize modal join us form  -- fix only one submit button
 
 8) add maps section
 
 9)make social media button links or w/e 
 
+10) maybe make nav bar inverted and logo in middle ?
+
+maybe remove dojo drawing in other pages except home ?
+ 
+make dojo logo clickable 
+
+11)maybe make video playing and then fade in dojo?

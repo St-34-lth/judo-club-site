@@ -1,48 +1,6 @@
 {{#if home}}
 <div class="row justify-content-center align-items-md-stretch">
           <div class="col-md-6 h-100 w-100">
-                    <div class="h-100 w-100 p-5 text-white bg-dark rounded-1">
-                              <h2>{{title}}</h2>
-                              <p>{{welcomeText}}
-                              </p>
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        Join!
-                              </button>
-                              
-                              <!-- Modal -->
-                              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                                  <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                                      <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                                aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                            <form action="">
-                                                                      <label for="fname">First name:</label>
-                                                                      <input type="text" id="fname" name="fname"><br><br>
-                                                                      <label for="lname">Last name:</label>
-                                                                      <input type="text" id="lname" name="lname"><br><br>
-                                                                      <input type="submit" value="Submit">
-                                                            </form>
-                                                            
-                                                            <p>Click the "Submit" button to complete your application form.</p>
-
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                      <button type="button" class="btn btn-secondary"
-                                                                                data-bs-dismiss="modal">Close</button>
-                                                                      <button type="button" class="btn btn-primary">Submit</button>
-                                                            </div>
-                                                  </div>
-                                        </div>
-                              </div>
-                              {{!-- <button onclick='test_button()' href=''class="btn btn-outline-light" type="button">Join us!</button> --}}
-                    </div>
-       
-
-
 {{/if}}
 
 <main>
@@ -169,10 +127,20 @@
           {{#if home}}
           <div id='home-container' class='container'>
                     <div class='row justify-content-center align-items-center bg-dark'>
-                              <div class='col-md-6'>
-                                     <a  id='news-1' class='news-col' href={{newsLink}}>
-                                    
-                                     </a>   
+                              
+                                        {{#each newsList}}
+                                        <div class='col-md-6'>
+                                                  <a class='news-col' href="{{newsUrl}}" style="background-image:url('{{backgroundImgUrl}}');">
+                                                  {{newsTitle}}
+                                                  </a>
+                                                  
+                                        </div>
+                                        {{/each}}
+                             
+
+                              
+                              <!-- <div class='col-md-6'>
+                                     
                               </div>
                               <div class='col-md-6'>
                                         <a id='news-2' class='news-col' href={{newsLink}}>
@@ -191,8 +159,55 @@
                                                   >
                               
                                         </a>
+                              </div> --> 
+                            
+                             
+                              
+                    </div>
+                    
+          </div>
+
+          <!-- JOIN US -->
+          <div class="h-100 w-100 p-5 text-white bg-dark rounded-1">
+                    <h2>{{title}}</h2>
+                    <p>{{welcomeText}}
+                    </p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                              Join!
+                    </button>
+          
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                              aria-hidden="true">
+                              <div class="modal-dialog">
+                                        <div class="modal-content">
+                                                  <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                      aria-label="Close"></button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                            <form action="">
+                                                                      <label for="fname">First name:</label>
+                                                                      <input type="text" id="fname" name="fname"><br><br>
+                                                                      <label for="lname">Last name:</label>
+                                                                      <input type="text" id="lname" name="lname"><br><br>
+                                                                      <input type="submit" value="Submit">
+                                                            </form>
+          
+                                                            <p>Click the "Submit" button to complete your application form.</p>
+          
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                      data-bs-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Submit</button>
+                                                  </div>
+                                        </div>
                               </div>
                     </div>
+                    
           </div>
+          
           {{/if}}
 </main>

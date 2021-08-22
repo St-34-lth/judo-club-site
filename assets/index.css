@@ -36,20 +36,13 @@ footer{
           text-align: center;
           
 }
-#news-3
-{
-          /* background-image:url('https://www.eju.net/wp-content/uploads/2021/08/Gabi-Juan-Masters-2021-197408-1024x683.jpg'); */
-}
-#news-4
-{
-         
-          background-image:url('')
-}
+
 #news_info
 {
           width:100%;
-          margin:0px;
-          padding:0px;
+          margin:auto;
+          padding-left:200px;
+          padding-right:200px;
           max-width:100%;
           
 }
@@ -89,20 +82,27 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 #main-image-container
 {
           width:auto;
-          height:auto;
+          height:500px;
           padding-bottom:10px;
           margin:auto;
-          
+          background-image:url('./images/dicky-dojo.jpg');
+          background-size: 100%;
+          background-position: 50%;
+          background-repeat:no-repeat;
           border-bottom:5px solid #973640;
 }
 #main-image
 {
          
-          width:300px;
-          height:300px;
-          border-radius:5px;
-          border:2.5px solid #973640;
+          width:100px;
+          height:100px;
+          border-radius:50px;
+          /* border:2.5px solid #973640; */
           padding:0;
+          position:relative;
+          top:0%;
+          background-color:#838383;
+          
 
 }
 #main-media-container
