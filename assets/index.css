@@ -20,12 +20,28 @@ footer{
 {
           
           background-size:cover;
-          width:540px;
+          width:100%;
           height:300px;
+          
           display:inline-block;
           margin:auto;
+          /* transfer effect to on hover */
+          box-shadow: 0 4px 8px 0 rgba(173, 31, 31, 0.37), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          transition:1s box-shadow;
+          max-width: 1280px;
+          text-align: center;
           
+}
+.news-col:hover
+{
           
+          box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.685), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          transition:1s box-shadow;
+}
+
+#left-main-col
+{
+          align-self:flex-start;
 }
 #home-container
 {
@@ -36,14 +52,17 @@ footer{
           text-align: center;
           
 }
-
+#carouselBox
+{
+          justify-content: center;
+          display:flex;
+}
 #news_info
 {
-          width:100%;
-          margin:auto;
-          padding-left:200px;
-          padding-right:200px;
-          max-width:100%;
+          
+          margin-left:auto;
+         
+          max-width:1280px;
           
 }
 #carousel-controls
@@ -70,7 +89,6 @@ footer{
         
 }
 
-
 #header-border
 {
          height:20px;
@@ -79,14 +97,20 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 {
           color: var(--bs-black) ;
 }
+#intro-video
+{
+          width:500px;
+          height:100%;
+}
 #main-image-container
 {
-          width:auto;
-          height:500px;
+          width:100%;
+          height:300px;
+          
           padding-bottom:10px;
           margin:auto;
-          background-image:url('./images/dicky-dojo.jpg');
-          background-size: 100%;
+          
+          background-size: 1280px;
           background-position: 50%;
           background-repeat:no-repeat;
           border-bottom:5px solid #973640;

@@ -126,48 +126,43 @@
 
           {{#if home}}
           <div id='home-container' class='container'>
-                    <div class='row justify-content-center align-items-center bg-dark'>
-                              
-                                        {{#each newsList}}
-                                        <div class='col-md-6'>
-                                                  <a class='news-col' href="{{newsUrl}}" style="background-image:url('{{backgroundImgUrl}}');">
-                                                  {{newsTitle}}
-                                                  </a>
-                                                  
-                                        </div>
-                                        {{/each}}
-                             
+                    <div class='row g-2 justify-content-center align-items-center bg-dark'>
+                              <div id='left-main-col' class='col-2'>
+                                        
+                                                  <video style='margin:0;'width="100%;" height="auto;" src='../../assets/0-02-0a-975b369384235524651a89e42c1e4add3bed4d33f346a3bbfdbb758d6acf8bf4_3efb72baecf22c51.mp4' controls>
 
+                                                  </video>
+                                        
+                                        
+                              </div>
+                              <div id='centre-main-col' class='col-8'>
+                                                  <div class='row'>
+                                                  {{#each newsList}}
+        
+                                                            <div class='col-6 p-2 bg-dark'>
+                                                            <a class='news-col' href="{{newsUrl}}" style="background-image:url('{{backgroundImgUrl}}');">
+                                                            {{newsTitle}}
+                                                            </a>
+                                                            </div>
+
+                                                  {{/each}}
+                                                  </div>
+                              </div>
+                              <div id='right-main-col' class='col-2'>
+
+                              </div>
                               
-                              <!-- <div class='col-md-6'>
-                                     
-                              </div>
-                              <div class='col-md-6'>
-                                        <a id='news-2' class='news-col' href={{newsLink}}>
-                                                
-                                        </a>
-                              </div>
-                              <div class='col-md-6'>
-                                        <a id='news-3' class='news-col' href={{newsLink}} style="background-image:url({{newsImage}});">
-                                                  
-                                        </a>
-                              </div>
-                              <div class='col-md-6'>
-                                        <a id='news-4' class='news-col'
-                                                  href={{newsLink}}
-                                                  style="background-image:url({{newsImage}});"
-                                                  >
-                              
-                                        </a>
-                              </div> --> 
-                            
-                             
+
                               
                     </div>
                     
           </div>
 
           <!-- JOIN US -->
+        
+          
+          {{/if}}
+          {{#if join}}
           <div class="h-100 w-100 p-5 text-white bg-dark rounded-1">
                     <h2>{{title}}</h2>
                     <p>{{welcomeText}}
@@ -206,8 +201,7 @@
                                         </div>
                               </div>
                     </div>
-                    
-          </div>
           
+          </div>
           {{/if}}
 </main>

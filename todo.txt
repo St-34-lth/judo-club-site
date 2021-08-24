@@ -1,15 +1,17 @@
-1) make favicon white
+1) make favicon whiteor blue 
 
 2) add alt texts & meta robot tags 
 
 
-3) fix footer display static bottom
+3) fix footer display static bottom 
+done 
 
 4) add text left and right from the logo ? 
 
 5) resize images in the media section 
 
-6) resize carousel height -- make image height responsive with JS ?
+6) resize carousel height -- make image height responsive with JS ? 
+kind of done 
 
 7) stylize modal join us form  -- fix only one submit button
 
@@ -19,8 +21,12 @@
 
 10) maybe make nav bar inverted and logo in middle ?
 
-maybe remove dojo drawing in other pages except home ?
+maybe remove dojo drawing in other pages except home ? fix handlebars template to that effect
  
 make dojo logo clickable 
 
-11)maybe make video playing and then fade in dojo?
+11)maybe make video playing and then fade in dojo? not a good idea 
+
+12)shadow hover effect over news ? 
+
+13) place video in the middle when playing with modal ? 
