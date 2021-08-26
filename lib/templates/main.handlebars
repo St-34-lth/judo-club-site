@@ -128,16 +128,16 @@
           <div id='home-container' class='container'>
                     <div class='row g-2 justify-content-center align-items-center bg-dark'>
                               <div id='left-main-col' class='col-2'>
-                                        
-                                                  <video style='margin:0;'width="100%;" height="auto;" src='../../assets/0-02-0a-975b369384235524651a89e42c1e4add3bed4d33f346a3bbfdbb758d6acf8bf4_3efb72baecf22c51.mp4' controls>
+                                                  {{#each leftList}}
+                                                  {{!-- <video style='margin:0;'width="100%;" height="auto;" src='../../assets/0-02-0a-975b369384235524651a89e42c1e4add3bed4d33f346a3bbfdbb758d6acf8bf4_3efb72baecf22c51.mp4' controls>
 
-                                                  </video>
-                                        
+                                                  </video> --}}
+                                        {{/each}}
                                         
                               </div>
                               <div id='centre-main-col' class='col-8'>
                                                   <div class='row'>
-                                                  {{#each newsList}}
+                                                  {{#each mainList}}
         
                                                             <div class='col-6 p-2 bg-dark'>
                                                             <a class='news-col' href="{{newsUrl}}" style="background-image:url('{{backgroundImgUrl}}');">
@@ -149,7 +149,9 @@
                                                   </div>
                               </div>
                               <div id='right-main-col' class='col-2'>
+                                        {{#each rightList}}
 
+                                        {{/each}}
                               </div>
                               
 
@@ -204,4 +206,101 @@
           
           </div>
           {{/if}}
+          
+
+          {{#if calendar}}
+          <div class='container-fluid bg-dark'>
+                    <div class='row'>
+                              <div class='col-6'>
+                              <h2>Latest Results</h2>
+                              </div>
+                              <div class='col-6'>
+                                        
+                                        <div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal"
+          data-bs-whatever="@fat">Find more</button>
+          <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                              <div class="modal-content">
+                                        <div class="modal-header">
+                                                  <h5 class="modal-title" id="searchModal">Search results</h5>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                                  <form>
+
+                                                            <div class="mb-3">
+                                                                      <label for="generalQueryBox"
+                                                                                class="col-form-label">Search</label>
+                                                                      <input type="text" class="form-control" id="generalQueryBox">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                      <label for="categoryQueryBox"
+                                                                                class="col-form-label">Category</label>
+                                                                                <div class="dropdown">
+                                                                                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                                                                    Dropdown button
+                                                                                          </button>
+                                                                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                                                                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                                                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                                                          </ul>
+                                                                                </div>
+                                                                      {{!-- <input type='text' class="form-control" id="categoryQueryBox"></input> --}}
+                                                            </div>
+                                                  </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                  <button type="button" class="btn btn-primary">Search</button>
+                                        </div>
+                              </div>
+                    </div>
+          </div>
+                                        
+                    </div>
+                   
+                    
+                    </div>
+                    {{#each eventList}}
+                    <div id='eventList'class='row'>
+                              
+                              <div id='eventItem' class='col'>
+                                        <p>{{resultName}}</p>
+                                        
+                              </div>
+                              <div id='eventItem' class='col'>
+                                        <p>{{resultLocation}}</p>
+                              </div>
+                              <div id='eventItem' class='col'>
+                                        <p>{{resultProps}}</p>
+                              </div>
+                             
+                    </div>
+                    {{/each}}
+          </div>
+          
+         
+          {{/if}}
+          
 </main>

@@ -47,13 +47,10 @@
                                                                       data-bs-toggle="dropdown"
                                                                       aria-expanded="false">More</a>
                                                             <ul class="dropdown-menu" aria-labelledby="dropdown08">
-                                                                      <li><a class="dropdown-item" href="#">Calendar</a>
+                                                                      <li><a class="dropdown-item" href="./Results.html">Results</a>
                                                                       </li>
-                                                                      <li class=>
-                                                                                <a class="dropdown-item" href="./Join.html">Join
-                                                                                          us!</a>
-                                                                      </li>
-                                                                      <li><a class="dropdown-item" href="#">Contact
+                                                                      
+                                                                      <li><a class="dropdown-item" href="./Contact.html">Contact
                                                                                           us</a></li>
                                                             </ul>
                                                   </li>
@@ -64,10 +61,11 @@
 
           <div id='header-border' class='.container row justify-content-center bg-dark rounded-1'></div>
           {{#if home}}
-          <div style='background-image:url('../../assets/images/dicky-dojo.jpg');' id='main-image-container' onload='playHomeVideo()'class='container-fluid row justify-content-center bg-dark rounded-1'>
+          <div style='background-image:url({{dojoImage}});' id='main-image-container' onload='playHomeVideo()'class='container-fluid row justify-content-center bg-dark rounded-1'>
                    
                     
-                    <img id='main-image' src='./assets/images/Home_intro.jpg' class='img-fluid'>
+                   
+                    <a style="display:inline-block;" href="./Home.html"><img id='main-image' src='./assets/images/Home_intro.jpg' class='img-fluid'></a>
                     
 
           </div>

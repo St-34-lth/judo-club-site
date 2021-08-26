@@ -110,7 +110,7 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           padding-bottom:10px;
           margin:auto;
           
-          background-size: 1280px;
+          background-size: 100%;
           background-position: 50%;
           background-repeat:no-repeat;
           border-bottom:5px solid #973640;
@@ -178,3 +178,23 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 }
 
 #
+*/
+#eventList
+{
+          padding:15px;
+          margin:5px;
+}
+#eventItem
+{
+          color:white;
+         
+          /* border-bottom: 2px solid #ffffff; */
+          
+         
+          
+}
+#eventList:hover
+{
+           box-shadow: 0 4px 8px , 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+           transition:1s box-shadowl;
+}

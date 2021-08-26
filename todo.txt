@@ -30,3 +30,12 @@ make dojo logo clickable
 12)shadow hover effect over news ? 
 
 13) place video in the middle when playing with modal ? 
+
+14)upcoming events bar on the right side of home page - links on the right to useful info ?
+
+15) finish contact us page insert maps and more info for the club 
+
+16) finish results page 
+          Complete modal search box with more drop down lists for months etc 
+          add styling 
+          
