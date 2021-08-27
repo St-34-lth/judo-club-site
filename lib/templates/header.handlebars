@@ -19,7 +19,7 @@
                               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#navbarsExample08" aria-controls="navbarsExample08"
                                         aria-expanded="false" aria-label="Toggle navigation">
-                                        <a class="navbar-brand" href=#'>
+                                        <a class="navbar-brand" href='#'>
                                                   <img id='judoButton' src='./assets/images/judo.png' width='24'
                                                             height='24'>
                                         </a>
@@ -35,7 +35,7 @@
                                                   </li>
 
                                                   <li class="nav-item">
-                                                            <a class="nav-link {{isHomeActive}}" href="./Home.html"
+                                                            <a class="nav-link {{isHomeActive}}" href="./index.html"
                                                                       tabindex="-1" aria-disabled="true">Home</a>
                                                   </li>
                                                   <li class="nav-item">
@@ -62,14 +62,22 @@
           <div id='header-border' class='.container row justify-content-center bg-dark rounded-1'></div>
           {{#if home}}
           <div style='background-image:url({{dojoImage}});' id='main-image-container' onload='playHomeVideo()'class='container-fluid row justify-content-center bg-dark rounded-1'>
+                    <a style="display:inline-block;" href="./index.html"><img id='main-image' src='./assets/images/Home_intro.jpg'
+                                        class='img-fluid'></a>
+                                        </div>
+          {{/if}}
+                    {{^home}}
+                    <div  id='main-image-container' class='container-fluid row justify-content-center bg-dark rounded-1'>
+                              <a style="display:inline-block;" href="./index.html"><img id='main-image' src='./assets/images/Home_intro.jpg'
+                                                  class='img-fluid'></a>
+                    </div>
+                    {{/home}}
                    
                     
-                   
-                    <a style="display:inline-block;" href="./Home.html"><img id='main-image' src='./assets/images/Home_intro.jpg' class='img-fluid'></a>
                     
 
-          </div>
-          {{/if}}
+          
+          
           
          <div id='carouselBox' class='container-fluid bg-dark'>
           <div id='news_info' class='container'>

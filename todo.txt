@@ -38,4 +38,6 @@ make dojo logo clickable
 16) finish results page 
           Complete modal search box with more drop down lists for months etc 
           add styling 
+
+17) make everything rounded 
           
