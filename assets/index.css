@@ -4,13 +4,20 @@ html,body {
     overflow-x:hidden;
 }
 body {
-  font: 1rem/1.5 var(--bs-font-sans-serif);
+  font: 1rem/1.5 judoFont;
 }
-
+@font-face
+{
+          font-family: judoFont;
+          src:url('./fonts/japanese_2020/JAPANESE_2020.ttf')
+}
 footer{
           background-color: #973640;
           margin:auto;
           
+}
+iframe[seamless] {
+  display: block;
 }
 .nav-link{
           color:white;
@@ -22,13 +29,15 @@ footer{
           background-size:cover;
           width:100%;
           height:300px;
-          
-          display:inline-block;
+          border-radius: 3px;
+          display:flex;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           margin:auto;
+          justify-content: center;
           /* transfer effect to on hover */
           box-shadow: 0 4px 8px 0 rgba(173, 31, 31, 0.37), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           transition:1s box-shadow;
-          max-width: 1280px;
+          max-width: 1000px;
           text-align: center;
           
 }
@@ -37,6 +46,10 @@ footer{
           
           box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.685), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           transition:1s box-shadow;
+}
+#centre-main-col
+{
+          align-self: flex-start;
 }
 #right-main-col
 {
@@ -92,7 +105,10 @@ footer{
           background-color: #973640;
         
 }
-
+#headlines-row
+{
+          background-color: #973640;
+}
 #header-border
 {
          height:20px;

@@ -40,4 +40,10 @@ make dojo logo clickable
           add styling 
 
 17) make everything rounded 
+
+18)change content - make home page an intro to judo and everything else news relate on the news page.
           
+
+19) fix search drop down selections
+
+20) find suitable font 
