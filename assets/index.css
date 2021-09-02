@@ -119,18 +119,18 @@ iframe[seamless] {
 {
           #centre-main-col
           {
-                    order:1;
+                    /* order:1; */
           }          
           #left-main-col 
           {
                     align-self:flex-start;
-                    order:2;
+                    /* order:2; */
 
           }
           #right-main-col
           {
                     align-self:flex-start;
-                    order:3;
+                    /* order:3; */
           }
           #leftItem > .card >img 
           {
@@ -240,7 +240,11 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 {
          min-height:65vh;
 }
-
+.mediaItem > img
+{
+          width:50%;
+          height:50%;
+}
 #main-footer-container
 {
           min-height:5vh;

@@ -42,27 +42,27 @@
           {{#if media}}
           <div id='main-media-container' class='container-fluid bg-dark bg-light'>
                     <div class='row g-2 justify-content-center'>
-                              <div class="col-6">
-                                        <div class="d-flex p-3 border justify-content-evenly bg-dark">
+                              <div class="col-md-6">
+                                        <div class="d-flex p-3 border justify-content-evenly  bg-dark mediaItem">
                                                   {{{media1}}}
 
                                         </div>
                               </div>
                              
-                              <div class="col-6">
-                                        <div class="d-flex p-3 border justify-content-evenly bg-dark">
+                              <div class="col-md-6">
+                                        <div class="d-flex p-3 border justify-content-evenly  bg-dark mediaItem">
                                                 {{{media2}}}
                               
                                         </div>
                               </div>
-                    <div class="col-6">
-                              <div class="d-flex p-3 justify-content-evenly border bg-dark">
+                    <div class="col-md-6">
+                              <div class="d-flex p-3 justify-content-evenly border  bg-dark mediaItem ">
                                        {{{media3}}}
                     
                               </div>
                     </div>
-                              <div class="col-6">
-                                        <div class="d-flex p-3  justify-content-evenly border bg-dark text-light">
+                              <div class="col-md-6">
+                                        <div class="d-flex p-3  justify-content-evenly border bg-dark mediaItem">
                                                   {{{media4}}}
                                         </div>
                               </div>
@@ -82,7 +82,7 @@
                               
                               <div class='col-2'><h2 style='color:var(--bs-dark); display:inline-block'></h2></div>
                               </div>
-                              <div id='left-main-col' class='col-md-2' {{leftOrder}}'>
+                              <div id='left-main-col' class='col-md-2' >
                                         
                                         
                                         
@@ -138,9 +138,10 @@
                                         <div class='row p-3'>
                                                   <div class='col-sm-6'>
                                                   <div id="rightItem" class="card ms-auto" style="width: 18rem;">
-                                                            <img src={{rightItemImg}} class="card-img-top" alt={{rightItemImgAltTxt}}>
+                                                            
                                                             <div class="card-body">
                                                                       <h5 class="card-title">{{rightItemTitle}}</h5>
+                                                            <img width={{imgWidth}} height={{imgHeight}} src={{rightItemImg}} class="card-img-top" alt={{rightItemImgAltTxt}}>
                                                                      {{#itemContent}}
                                                                       {{{item}}}
                                                                      {{/itemContent}}
