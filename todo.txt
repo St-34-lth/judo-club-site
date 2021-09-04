@@ -47,3 +47,5 @@ make dojo logo clickable
 19) fix search drop down selections
 
 20) find suitable font 
+
+21)fix top logo anchor link size 

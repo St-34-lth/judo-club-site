@@ -6,39 +6,45 @@
 <main>
           {{#if news}}
 
+                    <div class='container-fluid px-4'>
+                    <div class='bg-dark row gx-5 gy-3'>
+                                   
+                              {{#each newsList}}
+                              <div class='col-md-4 text-align-center position-relative bg-dark me-auto justify-content-center text-light rounded-3 newsItem'>
+                                        <div class='p-3 border bg-light  rounded-3 newsItemContainer'>
+                                                  <div class='p-1 rounded-3 container w-75 textContainer'>
+                                                            <p class="text-break newsItemText" >{{newsHeadline}}</p>
+                                                            
+                                                  </div>
+                                                  {{#if newsSrc}}
+                                                 
+                                                            <img class='rounded-3 newsItemImgAnchor' width="50%;" height="50%" src={{newsSrc}}>
+                                                  
+                                                  {{/if}}
+                                                  {{#if readMoreImgSrc}}
+                                                  <div class='p-1 container w-75 readMoreContainer'>
+                                                            <div id='newsDate'><p class='text-break me-auto'>{{newsDate}}</p></div>
+                                                            Read more
+                                                            <a href='{{newsLink}}'>
+                                                                      <img width='24' height='24'src={{readMoreImgSrc}}>
+                                                            </a>
+                                                  </div>
+                                                  {{/if}}
+                                        </div>
+                              </div>
+                    {{/each}}  
+                    </div>
+                    </div>
+        
+          {{/if}}
 
-          <div class='p-3 mg-2 bg-light text-dark row'>
-                    <div id='left-news' class='col'>
-                              <h2>Side News here</h2>
-                              {{#each leftNewsList}}
-                              <div class='row'>
-                              
-                              {{leftNewsItem}}
-                              </div>
-                              {{/each}}
-                              
-                    </div>
 
-                    <div id='main-news' class='col-6'>
-                              <h2>Main News here</h2>
-                              {{#each centreNewsList}}
-                              <div class='row'>
-                              
-                              {{centreNewsItem}}
-                              </div>
-                              {{/each}}
-                    </div>
-                    <div id='right-news' class='col'>
-                              <h2>Side News here too</h2>
-                              {{#each rightNewsList}}
-                              <div class='row'>
-                              {{rightNewsItem}}
-                              </div>
-                              {{/each}}
-                    </div>
-                 
+          {{#if home}}
+
+          </div>
           </div>
           {{/if}}
+         
           {{#if media}}
           <div id='main-media-container' class='container-fluid bg-dark bg-light'>
                     <div class='row g-2 justify-content-center'>
