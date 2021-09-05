@@ -8,36 +8,50 @@
 
                     <div class='container-fluid px-4'>
                     <div class='bg-dark row gx-5 gy-3'>
-                                   
+                              
                               {{#each newsList}}
+                              
                               <div class='col-md-4 text-align-center position-relative bg-dark me-auto justify-content-center text-light rounded-3 newsItem'>
-                                        <div class='p-3 border bg-light  rounded-3 newsItemContainer'>
-                                                  <div class='p-1 rounded-3 container w-75 textContainer'>
-                                                            <p class="text-break newsItemText" >{{newsHeadline}}</p>
+                                        <div class='row p-1 border bg-light rounded-3 newsItemContainer'>
+                                                  {{!-- <span class='d-inline-flex p-1 rounded-3 container w-75 textContainer'> --}}
                                                             
-                                                  </div>
-                                                  {{#if newsSrc}}
+                                                            
+                                                  {{!-- </span> --}}
+                                                  {{#if newsImgSrc}}
+                                                  <figure class='figure newsFigure'>
+                                                            <img class='figure-img img-fluid rounded newsItemImgAnchor'  src={{newsImgSrc}}>
+                                                          
+                                                            <figcaption class='newsCaption text-light'>
+                                                                      <div class='row figureRow'>
+                                                                                
+                                                                                <div class='col rounded-2 newsHeadline'>
+                                                                                          <p class="text-break newsItemText">{{newsHeadline}}</p>
+                                                                                          <p class='text-break newsItemDate'>{{newsDate}}</p>
+                                                                                </div>
+                                                                                <div class='col-sm-2 rounded-2 newsReadMore'>
+                                                                                          <a id='newsReadMoreAnchor' href={{newsLink}}>
+                                                                                
+                                                                                                    <img class='rounded' width='24' height='32' src={{readMoreImgSrc}}>
+                                                                                                   
+                                                                                          </a>
+                                                                                </div>
+                                                                      </div>
+                                                                      
+                                                            </figcaption>
+                                                  </figure>
+                                                
                                                  
-                                                            <img class='rounded-3 newsItemImgAnchor' width="50%;" height="50%" src={{newsSrc}}>
-                                                  
                                                   {{/if}}
-                                                  {{#if readMoreImgSrc}}
-                                                  <div class='p-1 container w-75 readMoreContainer'>
-                                                            <div id='newsDate'><p class='text-break me-auto'>{{newsDate}}</p></div>
-                                                            Read more
-                                                            <a href='{{newsLink}}'>
-                                                                      <img width='24' height='24'src={{readMoreImgSrc}}>
-                                                            </a>
-                                                  </div>
-                                                  {{/if}}
+                                                 
                                         </div>
                               </div>
+                              
                     {{/each}}  
-                    </div>
-                    </div>
+                  
+          
         
           {{/if}}
-
+</div>
 
           {{#if home}}
 
@@ -48,14 +62,16 @@
           {{#if media}}
           <div id='main-media-container' class='container-fluid bg-dark bg-light'>
                     <div class='row g-2 justify-content-center'>
-                              <div class="col-md-6">
-                                        <div class="d-flex p-3 border justify-content-evenly  bg-dark mediaItem">
-                                                  {{{media1}}}
+                              {{#each mediaList}}
+                              <div class="col-sm-8 rounded-2">
+                                        <h1 id='mediaHeadline'>{{mediaTitle}}</h1>
+                                        <div class="d-flex p-3 border justify-content-evenly rounded-2 bg-dark mediaItem">
+                                                  {{{mediaItem}}}
 
                                         </div>
                               </div>
                              
-                              <div class="col-md-6">
+                              {{!-- <div class="col-md-6">
                                         <div class="d-flex p-3 border justify-content-evenly  bg-dark mediaItem">
                                                 {{{media2}}}
                               
@@ -72,6 +88,8 @@
                                                   {{{media4}}}
                                         </div>
                               </div>
+                    </div> --}}
+                    {{/each}}
                     </div>
           </div>
           {{/if}}
@@ -382,7 +400,26 @@
                    
                     
                     </div>
+                    <table class='table'>
+                              <thead>
+                                        <tr>
+                                                  <th scope='col'>Place</th>
+                                                  <th scope='col'>Number of matches</th>
+                                                  <th scope='col'>Links</th>
+                                        </tr>
+                                        <tbody>
+                              </thead>
                     {{#each eventList}}
+
+                    
+                               
+
+
+
+                    {{/each}}
+                              </tbody>
+                              
+                    </table>
                     <div id='eventList'class='row'>
                               
                               <div id='eventItem' class='col'>

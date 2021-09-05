@@ -256,7 +256,7 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 {
          height:20px;
 }
-
+/* media page styling */
 #main-media-container
 {
          min-height:65vh;
@@ -271,22 +271,44 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           min-height:5vh;
           overflow:hidden;
 }
+#mediaHeadline
+{
+          color:white;
+          text-align: center;
+          font: 20px judoFont;
+}
 /* news page styling */
+
+
 .newsItemContainer 
 {
-          
+          padding:0;
+          box-shadow: 0 4px 8px 0 rgba(158, 158, 158, 0.685), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          transition:1s box-shadow;
          
 }
+
 .newsItemImgAnchor
 {
           width:100%;
           text-align: center;
+          opacity:0.9;
+}
+.newsItemImgAnchor:hover
+{
+          opacity:1;
+          transition:1s opacity;
 }
 .newsItemText
 {
-        z-index: 11;
+        z-index: 2;
+        margin-bottom:0px;
          
        
+}
+.newsItemDate
+{
+          margin-bottom:0px;
 }
 .textContainer
 {
@@ -298,7 +320,7 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           color:white;
           background-color: #97364075;
 }
-.readMoreContainer 
+/* .readMoreContainer 
 {
           position: absolute;
           text-align: right;
@@ -307,6 +329,11 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           transform: translate(-50%,-50%);
           color:white;
           border-top: 2px solid black;
+} */
+#newsReadMoreAnchor
+{
+          color:white;
+          text-decoration: none;
 }
 #newsDate
 {
@@ -314,7 +341,42 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
          text-align: left;
          
 }
+.newsCaption
+{
+          position:relative;
+          top:-14%;
+          transform: translate(0,-14%);
 
+}
+.newsFigure
+{
+          margin-bottom:-7%;
+         
+
+}
+
+.newsHeadline
+{
+          position:relative;
+         
+          background-color: #973640b9;
+
+}
+
+.newsReadMore
+{
+         
+          text-align:center;
+          background-color:#3b3b3bd8;
+          z-index:2;
+}
+/* #newsImgAnchor
+{
+          text-decoration:none;
+          text-decoration-color: white;
+          color: white;
+
+} */
 /* results page styling  */
 #eventList
 {
