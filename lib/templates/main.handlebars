@@ -12,14 +12,11 @@
                               {{#each newsList}}
                               
                               <div class='col-md-4 text-align-center position-relative bg-dark me-auto justify-content-center text-light rounded-3 newsItem'>
-                                        <div class='row p-1 border bg-light rounded-3 newsItemContainer'>
-                                                  {{!-- <span class='d-inline-flex p-1 rounded-3 container w-75 textContainer'> --}}
-                                                            
-                                                            
-                                                  {{!-- </span> --}}
+                                        <div class='row p-1 border bg-light rounded-3 newsItemSelected newsItemContainer'>
+                                                
                                                   {{#if newsImgSrc}}
                                                   <figure class='figure newsFigure'>
-                                                            <img class='figure-img img-fluid rounded newsItemImgAnchor'  src={{newsImgSrc}}>
+                                                            <img class='figure-img img-fluid rounded  newsItemImgAnchor'  src={{newsImgSrc}}>
                                                           
                                                             <figcaption class='newsCaption text-light'>
                                                                       <div class='row figureRow'>
@@ -31,7 +28,7 @@
                                                                                 <div class='col-sm-2 rounded-2 newsReadMore'>
                                                                                           <a id='newsReadMoreAnchor' href={{newsLink}}>
                                                                                 
-                                                                                                    <img class='rounded' width='24' height='32' src={{readMoreImgSrc}}>
+                                                                                                    <img class='animateButtonForward rounded' width='24' height='32' src={{readMoreImgSrc}}>
                                                                                                    
                                                                                           </a>
                                                                                 </div>
@@ -233,7 +230,7 @@
           
 
           {{#if results}}
-          <div class='container-fluid bg-dark'>
+          <div class='container-fluid bg-dark resultsContainer'>
                     <div class='row'>
                               <div class='col-6'>
                               <h2>Latest Results</h2>
@@ -400,41 +397,33 @@
                    
                     
                     </div>
-                    <table class='table'>
+                    <table class='table table-dark table-striped resultsTable'>
                               <thead>
                                         <tr>
-                                                  <th scope='col'>Place</th>
-                                                  <th scope='col'>Number of matches</th>
-                                                  <th scope='col'>Links</th>
+                                                  {{!-- <th scope='col'>Place</th>
+                                                  <th scope='col'>Name</th>
+                                                  <th scope='col'>Links</th> --}}
                                         </tr>
-                                        <tbody>
+                                        
                               </thead>
+                              <tbody>
+                                        
                     {{#each eventList}}
-
+                    <tr class='underlineSelection'>
                     
+                              <td>{{eventLocation}}</td>
+                              <td>{{eventName}}</td>
+                              <td>{{eventLinks}}</td>
+                    </tr>
                                
 
 
 
                     {{/each}}
-                              </tbody>
-                              
+                    </tbody>    
                     </table>
-                    <div id='eventList'class='row'>
-                              
-                              <div id='eventItem' class='col'>
-                                        <p>{{resultName}}</p>
-                                        
-                              </div>
-                              <div id='eventItem' class='col'>
-                                        <p>{{resultLocation}}</p>
-                              </div>
-                              <div id='eventItem' class='col'>
-                                        <p>{{resultProps}}</p>
-                              </div>
-                             
-                    </div>
-                    {{/each}}
+                  
+                    
           </div>
           </div>
          
