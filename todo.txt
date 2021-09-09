@@ -53,4 +53,13 @@ make dojo logo clickable
 
 22) fix home items order when switching to smaller view
 
-23)convert results page into table 
+23)convert results page into table -- done 
+
+24)form validation -- join us form left 
+search form done 
+
+25) home page make all text black/white but redthemed on hover ? 
+
+26) make a themed title for home page items 
+
+27) change the size of the news items 

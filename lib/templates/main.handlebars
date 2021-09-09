@@ -11,7 +11,7 @@
                               
                               {{#each newsList}}
                               
-                              <div class='col-md-4 text-align-center position-relative bg-dark me-auto justify-content-center text-light rounded-3 newsItem'>
+                              <div class='col-md-6 text-align-center position-relative bg-dark me-auto justify-content-center text-light rounded-3 newsItem'>
                                         <div class='row p-1 border bg-light rounded-3 newsItemSelected newsItemContainer'>
                                                 
                                                   {{#if newsImgSrc}}
@@ -62,30 +62,16 @@
                               {{#each mediaList}}
                               <div class="col-sm-8 rounded-2">
                                         <h1 id='mediaHeadline'>{{mediaTitle}}</h1>
+                                        <a href='#'>
                                         <div class="d-flex p-3 border justify-content-evenly rounded-2 bg-dark mediaItem">
+                                                 
                                                   {{{mediaItem}}}
-
+                                                  
                                         </div>
+                                        </a>
                               </div>
                              
-                              {{!-- <div class="col-md-6">
-                                        <div class="d-flex p-3 border justify-content-evenly  bg-dark mediaItem">
-                                                {{{media2}}}
-                              
-                                        </div>
-                              </div>
-                    <div class="col-md-6">
-                              <div class="d-flex p-3 justify-content-evenly border  bg-dark mediaItem ">
-                                       {{{media3}}}
-                    
-                              </div>
-                    </div>
-                              <div class="col-md-6">
-                                        <div class="d-flex p-3  justify-content-evenly border bg-dark mediaItem">
-                                                  {{{media4}}}
-                                        </div>
-                              </div>
-                    </div> --}}
+                           
                     {{/each}}
                     </div>
           </div>
@@ -93,7 +79,7 @@
 
           {{#if home}}
           <div id='home-container' class='container'>
-                    <div class='row g-2 justify-content-center align-items-center bg-dark'>
+                    <div class='row g-2 justify-content-space-between align-items-center bg-dark'>
                               
                               
                               <div id='headlines-row' class='row'>
@@ -104,17 +90,15 @@
                               <div class='col-2'><h2 style='color:var(--bs-dark); display:inline-block'></h2></div>
                               </div>
                               <div id='left-main-col' class='col-md-2' >
-                                        
-                                        
-                                        
                                         <div class='row p-3'>
                                                   {{#each leftList}}
                                                   
-                                                  <div id='leftItem' class='col-12'>
-                                                            <div class="card bg-transparent text-white">
-                                                                      <img src={{leftItemImg}} class="card-img-top leftItemImg" alt={{leftItemImgAltTxt}}>
+                                                  <div id='leftItem' class='col mb-5'>
+                                                            
+                                                            <div class="card rounded-4  bg-light">
+                                                                      <img src={{leftItemImg}} alt={{leftItemImgAltTxt}} class='rounded-2 leftItemImg'>
                                                                       <div class="card-body">
-                                                                                {{!-- <h5 class="card-title">{{leftItemTitle}}</h5> --}}
+                                                                     
                                                                                 {{#itemContent}}
                                                                                 {{{item}}}
                                                                                 {{/itemContent}}
@@ -132,7 +116,7 @@
                                         
                               </div>
                               
-                              <div id='centre-main-col' class='col-md-8 {{centreOrder}}'>
+                              <div id='centre-main-col' class='col-md-8'>
                                                   
                                                            
                                                   <div class='row p-2'>
@@ -145,27 +129,76 @@
                                                   
                                                   {{/each}}
                                                   {{#each anchorItems}}
-                                                  <div id='mainItem' class='col-sm-6 align-items-center news-col'>
-                                                  
-                                                  <a href={{anchorRef}} style='display:inline-block; height:80%; width:80%; background-image:url({{anchorUrl}});'>{{anchorText}}</a>
-
+                                                  <div id='mainItem' class='col-sm-6 align-items-start news-col'>
+                                                  <div class='row'>
+                                                            <div class='col-12 align-content-center'>
+                                                                      
+                                                                      <h2 class='centreAnchorItemText'>{{{anchorText}}}</h2>
+                                                                      
+                                                                      <a class='centreAnchorItem'href={{anchorRef}}><img class='centreAnchorImg' src='{{anchorUrl}}'></a>
+                                                            </div>
+                                                            
+                                                  </div>
                                                   </div>
                                                   {{/each}}
                               </div>
                               </div>
-                              <div id='right-main-col' class='col-md-2 {{rightOrder}}'>
+                              <div id='right-main-col' class='col-sm-2 ms-0'>
                               
                                         {{#each rightList}}
                                         <div class='row p-3'>
-                                                  <div class='col-sm-6'>
-                                                  <div id="rightItem" class="card ms-auto" style="width: 18rem;">
+                                                  <div class='col-sm-6 align-self-center'>
+                                                  <div id="rightItem" class="card" style="width: 18rem;">
                                                             
-                                                            <div class="card-body">
-                                                                      <h5 class="card-title">{{rightItemTitle}}</h5>
-                                                            <img width={{imgWidth}} height={{imgHeight}} src={{rightItemImg}} class="card-img-top" alt={{rightItemImgAltTxt}}>
-                                                                     {{#itemContent}}
-                                                                      {{{item}}}
-                                                                     {{/itemContent}}
+                              <div class="card-body">
+                                        <h5 class="card-title">{{rightItemTitle}}</h5>
+                              <img width={{imgWidth}} height={{imgHeight}} src={{rightItemImg}} class="card-img-top" alt={{rightItemImgAltTxt}}>
+                                        {{#itemContent}}
+                              {{{item}}}
+                              {{#if calendar}}
+                              <div class='row'>
+                                        <div id='calendarHeadMonth'class='calendarHead col'>Month</div>
+                                        <div id='calendarHeadYear'class='calendarHead col'>Year</div>
+                                        <div id='calendarHeadAge' class='calendarHead col'>Age</div>
+                              </div>
+                              {{#calendarItemDetails}}
+                              <div class='row'>
+                                                  
+                              <div class='col-sm-12'>
+                                        <div class='row'>
+                                                  <div class='col-12 mt-2 border-top border-dark calendarItemDate'>
+                                                  
+                                                            {{calendarItemDate}}
+                                                  
+                                                  </div>
+                                                  <div class='col-12 border-bottom border-dark  calendarItemInfo'>
+                                                            {{calendarItemInformation}}
+                                                  </div>
+                                                  
+                                        </div>
+                              
+                              
+                              </div>
+                              </div>
+                              {{/calendarItemDetails}}
+
+                                        <div class='row'>
+                                                  <div class='col-sm-12 mt-5'>
+                                                            Next event
+                                                  <div class='col border-top border-dark '>
+                                                            {{calendarNextEvent}}
+                                                  </div>
+                                                  </div>    
+                                        <div class='col-sm-12 mt-5'>
+                                                  Past event
+                                                  <div class='col border-top border-dark'>
+                                                            {{calendarPastEvent}}
+                                                  </div>
+                                        </div>
+
+                                        </div>
+                              {{/if}}
+                    {{/itemContent}}
                                                             </div>
 
                                                   </div>
@@ -232,45 +265,30 @@
           {{#if results}}
           <div class='container-fluid bg-dark resultsContainer'>
                     <div class='row'>
-                              <div class='col-6'>
-                              <h2>Latest Results</h2>
+                              <div class='col-12'>
+                              <h2 class='text-light text-break'>Judo events and results</h>
+                              <h3 class='text-primary text-break'>Latest</h3>
                               </div>
-                              <div class='col-6'>
+                              
                                         
-                                        <div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal"
-          data-bs-whatever="">Find more</button>
+ 
+
           <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModal" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                               <div class="modal-content">
                                         <div class="modal-header">
-                                                  <h5 class="modal-title" id="searchModal">Search results</h5>
+                                                  <h5 class="modal-title text-dark" id="searchModal">More events and results</h5>
                                                   <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                                  <form>
+                                                  <form class='needs-validation' novalidate>
                                                             <div class='container-fluid'>
                                                                       <div class='row'>
-                                                                                <div class='col'>
-                                                                                          <label for="generalQueryBox" class="col-form-label">Search</label>
-                                                                                          <input type="text" class="form-control" id="generalQueryBox">
+                                                                                <div class='col mb-1'>
+                                                                                          <label for="generalQueryBox" class="col-form-label text-dark">Search for:</label>
+                                                                                          <input type="text" class="form-control" id="generalQueryBox"  value='' required>
+                                                                                          <div class='invalid-feedback'>Please enter a search query!</div>
                                                                                 </div>
                                                                       </div>
 
@@ -380,29 +398,25 @@
                                                                                 </div>
                                                                       </div>
                                                             </div>
-                                                            
+                                                            <button onclick='form_validation()'type="submit" class="btn searchButton">Search</button>
+                                                            <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
                                                   </form>
+                                                  
                                                   </div>
-                                                  <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Search</button>
-                                                  </div>
+                                                  {{!-- <div class="modal-footer">
+                                                            
+                                                            <button type="submit" class="btn searchButton">Search</button>
+                                                  </div> --}}
                                         </div>
                                         
                               </div>
                     </div>
           </div>
-                                        
-                    
-                   
-                    
                     </div>
                     <table class='table table-dark table-striped resultsTable'>
                               <thead>
                                         <tr>
-                                                  {{!-- <th scope='col'>Place</th>
-                                                  <th scope='col'>Name</th>
-                                                  <th scope='col'>Links</th> --}}
+                                                
                                         </tr>
                                         
                               </thead>
@@ -422,9 +436,11 @@
                     {{/each}}
                     </tbody>    
                     </table>
-                  
-                    
           </div>
+          <div class='col-12  bg-dark'>
+          <button type="button" class="btn offset-sm-10 mt-2 mb-2 searchButton" data-bs-toggle="modal" data-bs-target="#searchModal"
+                    data-bs-whatever="">Search</button>
+                    </div>
           </div>
          
           {{/if}}
