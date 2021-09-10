@@ -6,12 +6,17 @@
 <main>
           {{#if news}}
 
-                    <div class='container-fluid px-4'>
-                    <div class='bg-dark row gx-5 gy-3'>
+<div class='container-fluid px-4'>
+          <div class='bg-dark row  gx-5 gy-3'>
+                    <div class='col-sm-3'>
                               
+                    </div>
+                    <div class='col-sm-6'>
+                              <div class='row mt-1'>
                               {{#each newsList}}
                               
-                              <div class='col-md-6 text-align-center position-relative bg-dark me-auto justify-content-center text-light rounded-3 newsItem'>
+                              
+                              <div class='col-md-6 position-relative  mt-1 bg-dark mb-1  text-light rounded-3 newsItem'>
                                         <div class='row p-1 border bg-light rounded-3 newsItemSelected newsItemContainer'>
                                                 
                                                   {{#if newsImgSrc}}
@@ -42,11 +47,17 @@
                                                  
                                         </div>
                               </div>
+
                               
-                    {{/each}}  
-                  
+                              {{/each}}  
+                              </div>
+                    </div>
+                    <div class='col-sm-3'>
+                    
+                    </div>
           
-        
+          </div>
+</div>
           {{/if}}
 </div>
 
@@ -120,46 +131,68 @@
                                                   
                                                            
                                                   <div class='row p-2'>
+                                                           
                                                   {{#each mainList}}
                                                   
-                                                 <div id='mainItem' class='col-sm-6 align-items-center news-col'>
+                                                 <div id='mainItem' class='bg-transparent col-sm-6 mt-2 align-items-center news-col'>
                                                             {{{mainListItem}}}
                                                   
                                                   </div>
                                                   
                                                   {{/each}}
                                                   {{#each anchorItems}}
-                                                  <div id='mainItem' class='col-sm-6 align-items-start news-col'>
-                                                  <div class='row'>
-                                                            <div class='col-12 align-content-center'>
-                                                                      
-                                                                      <h2 class='centreAnchorItemText'>{{{anchorText}}}</h2>
-                                                                      
-                                                                      <a class='centreAnchorItem'href={{anchorRef}}><img class='centreAnchorImg' src='{{anchorUrl}}'></a>
+                                                  <div style='height:auto;' id='mainItem' class='col-sm-6 pb-2 news-col mt-2 text-align-center'>
+                                                  <div class='row justify-content-center align-items-center'>
+                                                            <div class='col-sm-6 mb-0'>
+                                                            <h2 class='centreAnchorItemText'>{{{anchorText}}}</h2>
                                                             </div>
                                                             
+                                                            
+                                                            <div id='centreAnchorContainer' class='col-sm-12 text-align-center'>
+                                                                      
+                                                                      <a class='mx-auto centreAnchorItem'href={{anchorRef}}>
+                                                                                <img class='d-block mx-auto rounded img-fluid' src='{{anchorUrl}}'>
+                                                                      </a>
+                                                            </div>
+                                                            </div>
                                                   </div>
                                                   </div>
                                                   {{/each}}
+                                                  
                               </div>
-                              </div>
-                              <div id='right-main-col' class='col-sm-2 ms-0'>
+                             
+                              <div id='right-main-col' class='col-sm-2 me-0'>
                               
                                         {{#each rightList}}
-                                        <div class='row p-3'>
-                                                  <div class='col-sm-6 align-self-center'>
-                                                  <div id="rightItem" class="card" style="width: 18rem;">
+                                        <div class='row  p-3'>
+                                                  <div class='col-sm-6 '>
+                                                  <div id="rightItem" class="card">
                                                             
                               <div class="card-body">
                                         <h5 class="card-title">{{rightItemTitle}}</h5>
                               <img width={{imgWidth}} height={{imgHeight}} src={{rightItemImg}} class="card-img-top" alt={{rightItemImgAltTxt}}>
                                         {{#itemContent}}
                               {{{item}}}
+
                               {{#if calendar}}
                               <div class='row'>
-                                        <div id='calendarHeadMonth'class='calendarHead col'>Month</div>
-                                        <div id='calendarHeadYear'class='calendarHead col'>Year</div>
-                                        <div id='calendarHeadAge' class='calendarHead col'>Age</div>
+                                        <div id='calendarHeadMonth'class='calendarHead col'>
+                                                  <div class='col-sm-1 d-inline'> <button onclick='prevMonth();calendarItems()' class='btn  prevButton' type='button'></button></div>
+                                                  <div  id='calMonthValue' class='col-sm-1 d-inline'>Month</div>
+                                                  <div class='col-sm-1 d-inline'> <button class='btn  nextButton' onclick='nextMonth()'type='button'></button>
+                                                  </div>
+                                        <div id='calendarHeadYear'class='calendarHead col'>
+                                                  <div class='col-sm-1 d-inline'> <button  class='btn  prevButton' onclick='prevYear()'></button></div>
+                                                  <div  id='calYearValue' class='col-sm-1 d-inline'>Year</div>
+                                                  <div class='col-sm-1 d-inline'> <button class='btn  nextButton' type='button' onclick='nextYear()'></button>
+                                                  </div>
+                                        </div>
+                                        <div id='calendarHeadAge' class='calendarHead col'>
+                                                  <div class='col-sm-1 d-inline'> <button class='btn  prevButton' type='button' onclick='nextAge()'></button></div>
+                                                  <div id='calAgeValue' class='col-sm-1 d-inline'>Age</div>
+                                                  <div class='col-sm-1 d-inline'> <button class='btn  nextButton' type='button' onclick='nextAge()'></button>
+                                                  </div>
+                                        </div>
                               </div>
                               {{#calendarItemDetails}}
                               <div class='row'>
@@ -207,7 +240,7 @@
                                         {{/each}}
                                         
                               </div>
-                              
+                              </div>
 
                               
                     </div>
@@ -220,45 +253,143 @@
           {{/if}}
           {{#if join}}
           <div class="h-100 w-100 p-5 text-white bg-dark rounded-1">
+                    
                     <h2>{{title}}</h2>
-                    <p>{{welcomeText}}
-                    </p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                              Join!
-                    </button>
-          
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    <div class='row justify-content-center align-items-center'>
+                              
+                              <div id='dojoListCol' class='col-sm-3 align-self-start  mt-3  ms-0 p-1'>
+                                        <h2>Dojo members</h2>
+                                        <table class='table text-white'>
+                                                  <thead>
+                                                            <tr>
+                                                                      <th scope='col'>Dojo name</th>
+                                                            </tr>
+                                                  </thead>
+                                                  
+                                                  <tbody>
+                                                            
+                                                           
+                                                                      {{#dojoList}}
+                                                                      {{#each dojoMembers}}
+                                                                      <tr>
+                                                                      <td>{{.}}</td>
+                                                                      </tr>
+                                                                      {{/each}} 
+                                                                      {{/dojoList}}
+                                                            
+                                                            
+                                                  </tbody>
+                                        </table>
+                              </div>
+                              <div class='col-sm-9 mt-3 ms-0 p-1'>
+                                        <div class='row'>
+                                                  <div class='col-sm-12 mb-2 p-3'>
+                                                            <h2>Find our members Dojo's here</h2>
+                                                            <iframe id='mapLocation'
+                                                                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1571.8909803424451!2d23.66695691968576!3d38.00554596598539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bb55418b99bf%3A0x72439d134dce5e86!2sHaidari%20Judo%20Academy!5e0!3m2!1sen!2sgr!4v1631187912765!5m2!1sen!2sgr"
+                                                                      width="100%" height="500px;" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                                  </div>
+                                        </div>
+                                        <div class='row'>
+                                        <div class='col-sm-12 align-self-end'>
+                                        
+                                        
+                                                  <p>{{moreText}}</p>
+                                                  <p>{{welcomeText}}</p>
+                                                  <button type="button" class="btn joinButton" data-bs-toggle="modal" data-bs-target="#joinModal">
+                                                            Join!
+                                                  </button>
+                                                  
+                                        </div>
+                                        <div class='row'>
+                                                  <div class='col-sm-12 mt-5 ms-1 p-1 rounded-2 text-dark bg-light align-self-end'>
+                                                  <form class='needs-validation' novalidate>
+                                                  <div class='input-group mt-3 mb-3'>
+
+                                                                      <span class="input-group-text" id="fname">First & Last Name</span>
+                                                                      <input type="text" class="form-control" placeholder="Please type your first & last name here" aria-label="fname" aria-describedby="fname" value='' required>
+                                                  <div class="input-group">
+                                                            <span class="input-group-text">Type your message here</span>
+                                                            <textarea style="height:250px;"class="form-control" value='' aria-label="Message" required></textarea>
+                                                  </div>
+                                                  <div class='invalid-feedback'>
+                                                            Please enter appropriate entries.
+                                                  </div>
+                                                            <button type='submit' class='btn msgButton' onclick='form_validation()'>
+                                                                      Message
+                                                            
+                                                            </button>
+                                                            </div>
+                                                            </form>
+                                                  </div>
+                                        
+                                        </div>
+                              </div>
+                              </div>
+                   
+                    <!-- Join Modal -->
+                    <div class="modal fade" id="joinModal" tabindex="-1" aria-labelledby="joinModalLabel"
                               aria-hidden="true">
                               <div class="modal-dialog">
                                         <div class="modal-content">
                                                   <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <h5 class="modal-title" id="joinModalLabel">Modal title</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                       aria-label="Close"></button>
                                                   </div>
-                                                  <div class="modal-body">
-                                                            <form action="">
-                                                                      <label for="fname">First name:</label>
-                                                                      <input type="text" id="fname" name="fname"><br><br>
-                                                                      <label for="lname">Last name:</label>
-                                                                      <input type="text" id="lname" name="lname"><br><br>
-                                                                      <input type="submit" value="Submit">
+                                                  <div class="text-dark modal-body">
+                                                            <form class='needs-validation' novalidate>
+                                                                      <div class='row'>
+                                                                                <div class='col-sm-6'>
+                                                                      {{!-- First name --}}
+                                                                      <label class='col-form-label'for="fname">First name:</label>
+                                                                      <input class='col-sm-6 col-form-control' value=''  type="text" id="fname" name="fname" required>
+                                                                      <div class='invalid-feedback'>
+                                                                                Please enter a valid first name.
+                                                                      </div><br><br>
+                                                                      {{!-- Last name --}}
+                                                                      <label class='col-form-label' for="lname">Last name:</label>
+                                                                      
+                                                                      <input class='col-sm-6 col-form-control' type="text" id="lname" name="lname" required>
+                                                                      <div class='invalid-feedback'>
+                                                                                Please enter a valid last name.
+                                                                      </div>
+                                                                      <br><br>
+                                                                      </div>
+                                                                      
+                                                                      <div class='col-sm-6'>
+                                                                      {{!-- Email --}}
+                                                                      <label class='col-form-label' for="email">Email:</label>
+                                                                      <input class='col-sm-6 col-form-control' type="text" id="email" name="email" required>
+                                                                      <div class='invalid-feedback'>
+                                                                                Please enter a valid email.
+                                                                      </div>
+                                                                      <br><br>
+
+                                                                      {{!-- Dojo --}}
+                                                                      <label class='col-form-label' for="dojo">Dojo:</label>
+                                                                      <input class='col-sm-6 col-form-control' type="text" id="dojo" name="dojo">
+                                                                      <br><br>
+                                                                      </div>
+                                                                      </div>
+                                                                      <p>Click the "Submit" button to complete your application form.</p>
+
+                                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                      <button id='submitJoinBtn' onclick='form_validation()' type="submit" class="btn">Submit</button>
+                                                          
                                                             </form>
-          
-                                                            <p>Click the "Submit" button to complete your application form.</p>
+                                                            
           
                                                   </div>
-                                                  <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                      data-bs-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Submit</button>
-                                                  </div>
+                                                 
+                                                  
                                         </div>
                               </div>
                     </div>
-          
+
+
           </div>
+          
           {{/if}}
           
 
