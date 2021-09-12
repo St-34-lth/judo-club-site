@@ -1,65 +1,61 @@
-1) make favicon whiteor blue 
+1) make favicon whiteor blue -- not 
 
-2) add alt texts & meta robot tags 
+2) add alt texts & meta robot tags -- to do 
 
 
 3) fix footer display static bottom 
 done 
 
-4) add text left and right from the logo ? 
-
 5) resize images in the media section 
-
+--done
 6) resize carousel height -- make image height responsive with JS ? 
-kind of done 
+done 
 
 7) stylize modal join us form  -- fix only one submit button
-
+done
 8) add maps section
-
+done
 9)make social media button links or w/e 
-
+done
 10) maybe make nav bar inverted and logo in middle ?
+done
 
-maybe remove dojo drawing in other pages except home ? fix handlebars template to that effect
- 
 make dojo logo clickable 
-
-11)maybe make video playing and then fade in dojo? not a good idea 
+done
 
 12)shadow hover effect over news ? 
-
-13) place video in the middle when playing with modal ? 
+done
 
 14)upcoming events bar on the right side of home page - links on the right to useful info ?
-
+done
 15) finish contact us page insert maps and more info for the club 
-
+done
 16) finish results page 
           Complete modal search box with more drop down lists for months etc 
           add styling 
-
+done
 17) make everything rounded 
-
+done
 18)change content - make home page an intro to judo and everything else news relate on the news page.
-          
+    done      
 
 19) fix search drop down selections
-
+done
 20) find suitable font 
-
+done
 21)fix top logo anchor link size 
-
+done
 
 22) fix home items order when switching to smaller view
-
+done
 23)convert results page into table -- done 
 
-24)form validation -- join us form left 
-search form done 
-
+24)form validation -- join us form left  
+done
 25) home page make all text black/white but redthemed on hover ? 
+done
 
-26) make a themed title for home page items 
+27) change the size of the news items done
 
-27) change the size of the news items 
+28) fix age group categories calendar scroll 
+done

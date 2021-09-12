@@ -1,78 +1,75 @@
-{{#if home}}
-<div class="row justify-content-center align-items-md-stretch">
-          <div class="col-md-6 h-100 w-100">
-{{/if}}
-
 <main>
+         
           {{#if news}}
 
-<div class='container-fluid px-4'>
-          <div class='bg-dark row  gx-5 gy-3'>
-                    <div class='col-sm-3'>
-                              
+          <div class='container-fluid px-4'>
+                    <div class='bg-dark row mt-0  gx-5 gy-3'>
+                    <div id='newsHeadlineContainer'class='col-lg text-center text-white'>
+                              <h2>Recent news</h2>
+                    </div>          
                     </div>
-                    <div class='col-sm-6'>
-                              <div class='row mt-1'>
-                              {{#each newsList}}
-                              
-                              
-                              <div class='col-md-6 position-relative  mt-1 bg-dark mb-1  text-light rounded-3 newsItem'>
-                                        <div class='row p-1 border bg-light rounded-3 newsItemSelected newsItemContainer'>
-                                                
-                                                  {{#if newsImgSrc}}
-                                                  <figure class='figure newsFigure'>
-                                                            <img class='figure-img img-fluid rounded  newsItemImgAnchor'  src={{newsImgSrc}}>
-                                                          
-                                                            <figcaption class='newsCaption text-light'>
-                                                                      <div class='row figureRow'>
-                                                                                
-                                                                                <div class='col rounded-2 newsHeadline'>
-                                                                                          <p class="text-break newsItemText">{{newsHeadline}}</p>
-                                                                                          <p class='text-break newsItemDate'>{{newsDate}}</p>
-                                                                                </div>
-                                                                                <div class='col-sm-2 rounded-2 newsReadMore'>
-                                                                                          <a id='newsReadMoreAnchor' href={{newsLink}}>
-                                                                                
-                                                                                                    <img class='animateButtonForward rounded' width='24' height='32' src={{readMoreImgSrc}}>
-                                                                                                   
-                                                                                          </a>
-                                                                                </div>
-                                                                      </div>
+                    <div class='bg-dark row mt-0  gx-5 gy-3'>
+                              <div class='col-sm-2'>
+                                        
+                              </div>
+                              <div class='col-sm-8 ms-3'>
+                                        <div class='row me-4  mt-1'>
+                                        {{#each newsList}}
+                                        
+                                        
+                                        <div class='col-lg-6 position-relative  mt-1 bg-dark mb-1  text-light rounded-3 newsItem'>
+                                                  <div class='row p-1 border bg-light rounded-3 newsItemSelected newsItemContainer'>
+                                                  
+                                                            {{#if newsImgSrc}}
+                                                            <figure class='figure newsFigure'>
+                                                                      <img class='figure-img img-fluid rounded  newsItemImgAnchor'  src={{newsImgSrc}} alt={{newsImgAltText}}>
+                                                            
+                                                                      <figcaption class='newsCaption text-light'>
+                                                                                <div class='row figureRow'>
+                                                                                          
+                                                                                          <div class='col rounded-2 newsHeadline'>
+                                                                                                    <p class="text-break newsItemText">{{newsHeadline}}</p>
+                                                                                                    <p class='text-break newsItemDate'>{{newsDate}}</p>
+                                                                                          </div>
+                                                                      <div class='col-sm-2 rounded-2 newsReadMore'>
+                                                                                <a class='newsReadMoreAnchor' href='/news/articles/article.html' 
+                                                                                aria-label='Read this article link'>
                                                                       
-                                                            </figcaption>
-                                                  </figure>
-                                                
-                                                 
-                                                  {{/if}}
-                                                 
+                                                                                          <img class='animateButtonForward rounded' width='24' height='32' src={{readMoreImgSrc}} alt='button to link'>
+                                                                                          
+                                                                                </a>
+                                                                      </div>
+                                                            </div>
+                                                            
+                                                  </figcaption>
+                                        </figure>
+                                                  
+                                                  
+                                                            {{/if}}
+                                                  
+                                                  </div>
+                                        </div>
+
+                                        
+                                        {{/each}}  
                                         </div>
                               </div>
-
+                              <div class='col-sm-2'>
                               
-                              {{/each}}  
                               </div>
-                    </div>
-                    <div class='col-sm-3'>
                     
                     </div>
-          
           </div>
-</div>
-          {{/if}}
-</div>
 
-          {{#if home}}
-
-          </div>
-          </div>
           {{/if}}
-         
+
           {{#if media}}
+          
           <div id='main-media-container' class='container-fluid bg-dark bg-light'>
                     <div class='row g-2 justify-content-center'>
                               {{#each mediaList}}
                               <div class="col-sm-8 rounded-2">
-                                        <h1 id='mediaHeadline'>{{mediaTitle}}</h1>
+                                        <h2 class='mediaHeadline'>{{mediaTitle}}</h2>
                                         <a href='#'>
                                         <div class="d-flex p-3 border justify-content-evenly rounded-2 bg-dark mediaItem">
                                                  
@@ -86,28 +83,22 @@
                     {{/each}}
                     </div>
           </div>
+
           {{/if}}
 
           {{#if home}}
-          <div id='home-container' class='container'>
-                    <div class='row g-2 justify-content-space-between align-items-center bg-dark'>
+          
+          <div id='home-container' class='container-fluid w-100 p-0 text-center'>
+                    <div class='row g-2 justify-content-space-between align-items-center bg-dark rounded-2'>
                               
-                              
-                              <div id='headlines-row' class='row'>
-                                        <div class='col-2'> <h2 style='color:var(--bs-dark); display:inline-block'></h2> </div>
-                              <div class='col-8'><h2 style='color:var(--bs-dark); display:inline-block'></h2></div>
-                              
-                              
-                              <div class='col-2'><h2 style='color:var(--bs-dark); display:inline-block'></h2></div>
-                              </div>
-                              <div id='left-main-col' class='col-md-2' >
+                              <div class='col-md-2 leftMainCol' >
                                         <div class='row p-3'>
                                                   {{#each leftList}}
                                                   
-                                                  <div id='leftItem' class='col mb-5'>
+                                                  <div class='col mb-5 ms-1 leftItem'>
                                                             
                                                             <div class="card rounded-4  bg-light">
-                                                                      <img src={{leftItemImg}} alt={{leftItemImgAltTxt}} class='rounded-2 leftItemImg'>
+                                                            <img src={{leftItemImg}}  class='rounded-2 leftItemImg'alt='{{leftItemImgAltTxt}}'>
                                                                       <div class="card-body">
                                                                      
                                                                                 {{#itemContent}}
@@ -127,30 +118,30 @@
                                         
                               </div>
                               
-                              <div id='centre-main-col' class='col-md-8'>
+                              <div class='col-md-8 centreMainCol'>
                                                   
                                                            
                                                   <div class='row p-2'>
                                                            
                                                   {{#each mainList}}
                                                   
-                                                 <div id='mainItem' class='bg-transparent col-sm-6 mt-2 align-items-center news-col'>
+                                                 <div class='bg-transparent col-sm-6 mt-2 align-items-center news-col'>
                                                             {{{mainListItem}}}
                                                   
                                                   </div>
                                                   
                                                   {{/each}}
                                                   {{#each anchorItems}}
-                                                  <div style='height:auto;' id='mainItem' class='col-sm-6 pb-2 news-col mt-2 text-align-center'>
+                                                  <div style='height:auto;' class='col-sm-6 pb-2 news-col mt-2 text-align-center'>
                                                   <div class='row justify-content-center align-items-center'>
                                                             <div class='col-sm-6 mb-0'>
                                                             <h2 class='centreAnchorItemText'>{{{anchorText}}}</h2>
                                                             </div>
                                                             
                                                             
-                                                            <div id='centreAnchorContainer' class='col-sm-12 text-align-center'>
+                                                            <div class='col-sm-12 text-align-center centreAnchorContainer'>
                                                                       
-                                                                      <a class='mx-auto centreAnchorItem'href={{anchorRef}}>
+                                                                      <a class='mx-auto centreAnchorElmt'href={{anchorRef}} aria-label={{anchorAltText}}>
                                                                                 <img class='d-block mx-auto rounded img-fluid' src='{{anchorUrl}}'>
                                                                       </a>
                                                             </div>
@@ -161,36 +152,39 @@
                                                   
                               </div>
                              
-                              <div id='right-main-col' class='col-sm-2 me-0'>
+                              <div class='col-md-2 rightMainCol'>
                               
                                         {{#each rightList}}
-                                        <div class='row  p-3'>
+                                        <div class='row ms-0 p-3'>
                                                   <div class='col-sm-6 '>
-                                                  <div id="rightItem" class="card">
+                                                  <div class="card rightItem">
                                                             
                               <div class="card-body">
-                                        <h5 class="card-title">{{rightItemTitle}}</h5>
-                              <img width={{imgWidth}} height={{imgHeight}} src={{rightItemImg}} class="card-img-top" alt={{rightItemImgAltTxt}}>
+                                        <h5   class="card-title" aria-label={{{rightItemImgAltText}}}>{{rightItemTitle}}</h5>
+                              
                                         {{#itemContent}}
                               {{{item}}}
 
                               {{#if calendar}}
                               <div class='row'>
-                                        <div id='calendarHeadMonth'class='calendarHead col'>
-                                                  <div class='col-sm-1 d-inline'> <button onclick='prevMonth();calendarItems()' class='btn  prevButton' type='button'></button></div>
+                                        <div  id='calendarHeadMonth' class='calendarHead col'>
+                                                  <div class='col-sm-1 d-inline'> <button onclick='prevMonth();' class='btn  prevButton' type='button'aria-label='calendar button previous month'></button></div>
                                                   <div  id='calMonthValue' class='col-sm-1 d-inline'>Month</div>
-                                                  <div class='col-sm-1 d-inline'> <button class='btn  nextButton' onclick='nextMonth()'type='button'></button>
+                                                  <div class='col-sm-1 d-inline'> <button aria-label='calendar button next month' class='btn  nextButton' onclick='nextMonth()'type='button'></button>
                                                   </div>
                                         <div id='calendarHeadYear'class='calendarHead col'>
-                                                  <div class='col-sm-1 d-inline'> <button  class='btn  prevButton' onclick='prevYear()'></button></div>
+                                                  <div class='col-sm-1 d-inline'> 
+                                                            <button  class='btn  prevButton' onclick='prevYear()'aria-label='calendar button previous year'></button>
+                                                            </div>
                                                   <div  id='calYearValue' class='col-sm-1 d-inline'>Year</div>
-                                                  <div class='col-sm-1 d-inline'> <button class='btn  nextButton' type='button' onclick='nextYear()'></button>
+                                                  <div class='col-sm-1 d-inline'> 
+                                                            <button class='btn  nextButton' type='button' onclick='nextYear()'aria-label='calendar button next year'></button>
                                                   </div>
                                         </div>
                                         <div id='calendarHeadAge' class='calendarHead col'>
-                                                  <div class='col-sm-1 d-inline'> <button class='btn  prevButton' type='button' onclick='nextAge()'></button></div>
+                                                  <div class='col-sm-1 d-inline'> <button class='btn prevButton' type='button' onclick='prevAge()' aria-label='calendar button previous age category'></button></div>
                                                   <div id='calAgeValue' class='col-sm-1 d-inline'>Age</div>
-                                                  <div class='col-sm-1 d-inline'> <button class='btn  nextButton' type='button' onclick='nextAge()'></button>
+                                                  <div class='col-sm-1 d-inline'> <button class='btn  nextButton' type='button' onclick='nextAge()'aria-label='calendar button next age category'></button>
                                                   </div>
                                         </div>
                               </div>
@@ -239,22 +233,21 @@
                                         </div>
                                         {{/each}}
                                         
-                              </div>
+                                        </div>
                               </div>
 
-                              
                     </div>
                     
           </div>
-
-          <!-- JOIN US -->
-        
-          
+   
           {{/if}}
+          
+          
           {{#if join}}
+
           <div class="h-100 w-100 p-5 text-white bg-dark rounded-1">
                     
-                    <h2>{{title}}</h2>
+                    
                     <div class='row justify-content-center align-items-center'>
                               
                               <div id='dojoListCol' class='col-sm-3 align-self-start  mt-3  ms-0 p-1'>
@@ -285,9 +278,9 @@
                                         <div class='row'>
                                                   <div class='col-sm-12 mb-2 p-3'>
                                                             <h2>Find our members Dojo's here</h2>
-                                                            <iframe id='mapLocation'
+                                                            <map name='member-dojo-locations'><iframe id='mapLocation'
                                                                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1571.8909803424451!2d23.66695691968576!3d38.00554596598539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bb55418b99bf%3A0x72439d134dce5e86!2sHaidari%20Judo%20Academy!5e0!3m2!1sen!2sgr!4v1631187912765!5m2!1sen!2sgr"
-                                                                      width="100%" height="500px;" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                                                      width="100%" height="500px;" style="border:0;" allowfullscreen="" loading="lazy"></iframe></map>
                                                   </div>
                                         </div>
                                         <div class='row'>
@@ -307,10 +300,10 @@
                                                   <div class='input-group mt-3 mb-3'>
 
                                                                       <span class="input-group-text" id="fname">First & Last Name</span>
-                                                                      <input type="text" class="form-control" placeholder="Please type your first & last name here" aria-label="fname" aria-describedby="fname" value='' required>
+                                                                      <input type="text" class="form-control" placeholder="Please type your first & last name here" aria-label="first & last name input area" required>
                                                   <div class="input-group">
                                                             <span class="input-group-text">Type your message here</span>
-                                                            <textarea style="height:250px;"class="form-control" value='' aria-label="Message" required></textarea>
+                                                            <textarea style="height:250px;"class="form-control"  aria-label="Message input area" required></textarea>
                                                   </div>
                                                   <div class='invalid-feedback'>
                                                             Please enter appropriate entries.
@@ -392,13 +385,15 @@
           
           {{/if}}
           
+{{#if results}}
 
-          {{#if results}}
           <div class='container-fluid bg-dark resultsContainer'>
                     <div class='row'>
                               <div class='col-12'>
-                              <h2 class='text-light text-break'>Judo events and results</h>
-                              <h3 class='text-primary text-break'>Latest</h3>
+                              <h2 class='text-break'>Judo events and results</h>
+                              <div class='col-12'>
+                              <h3 class='text-start'>Latest</h3>
+                              </div>
                               </div>
                               
                                         
@@ -412,132 +407,95 @@
                                                   <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body">
+                                        <div class="modal-body ">
                                                   <form class='needs-validation' novalidate>
-                                                            <div class='container-fluid'>
-                                                                      <div class='row'>
-                                                                                <div class='col mb-1'>
-                                                                                          <label for="generalQueryBox" class="col-form-label text-dark">Search for:</label>
-                                                                                          <input type="text" class="form-control" id="generalQueryBox"  value='' required>
-                                                                                          <div class='invalid-feedback'>Please enter a search query!</div>
-                                                                                </div>
-                                                                      </div>
-
-                                                                      <div class='row'>
-                                                            {{#each searchParams}}
-
-                                                                     
-                                                                      <div id='search-category-container' class='col-md-3'>
-                                                                      
-                                                            
-                                                                                {{!-- <button class="select btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                                                          data-bs-toggle="dropdown" aria-expanded="false">
-                                                                                          Category
-                                                                                </button> --}}
-                                                                                {{!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2"> --}}
-                                                                                          <div class="input-group mb-3">
-                                                                                                    <div class="input-group-prepend">
-                                                                                                              <label class="input-group-text" for="inputGroupSelect01">Category</label>
-                                                                                                    </div>
-                                                                                                   
-                                                                                                              
-                                                                                                    
-                                                                                          
-                                                                                          <select class="custom-select" id="inputGroupSelect01">
-                                                                                          {{#each categories}}
-                                                                                                    <option value={{.}}type='button' class="dropdown-item">{{.}}</option>
-                                                                                          {{/each}}
-                                                                                          </select>
-                                                                                {{!-- </ul> --}}
-                                                                                </div>
-
-                                                                                </div>
-                                                                               
-                                                                                
-                                                                               
-
-                                                                      <div id='search-month-container' class='col-md-3'>
-                                                                      
-                                                                      
-                                                                                
-                                                                                <div class="input-group mb-3">
-                                                                                          <div class="input-group-prepend">
-                                                                                                    <label class="input-group-text" for="inputGroupSelect01">Month</label>
-                                                                                          </div>
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                          <select class="custom-select" id="inputGroupSelect01">
-                                                                                                    {{#each months}}
-                                                                                                    <option value={{.}}type='button' class="dropdown-item">{{.}}</option>
-                                                                                                    {{/each}}
-                                                                                          </select>
-                                                                                          
-                                                                                </div>
-                                                                                          
-
-                                                                                          
-                                                                                         
-                                                                                         
-                                                                      
-                                                                      </div>
-                                                                      <div id='search-year-container' class='col-md-3'>
-                                                                      
-                                                                      
-                                                                                <div class="input-group mb-4">
-                                                                                          <div class="input-group-prepend">
-                                                                                                    <label class="input-group-text" for="inputGroupSelect01">Year</label>
-                                                                                          </div>
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                          <select class="custom-select" id="inputGroupSelect01">
-                                                                                                    {{#each years}}
-                                                                                                    <option value={{.}}type='button' class="dropdown-item">{{.}}</option>
-                                                                                                    {{/each}}
-                                                                                          </select>
-                                                                                
-                                                                                </div>
-                                                                      </div>
-                                                                      <div id='search-event-container' class='col-md-3'>
-                                                                      
-                                                                      
-                                                                                <div class="input-group mb-3">
-                                                                                          <div class="input-group-prepend">
-                                                                                                    <label class="input-group-text" for="inputGroupSelect01">Types</label>
-                                                                                          </div>
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                          <select class="custom-select" id="inputGroupSelect01">
-                                                                                                    {{#each types}}
-                                                                                                    <option value={{.}}type='button' class="dropdown-item">{{.}}</option>
-                                                                                                    {{/each}}
-                                                                                          </select>
-                                                                                
-                                                                                </div>
-                                                                      </div>
-                                                            {{/each}}
-
-                                                                      </div>
-                                                                      <div id='selected-search-params' class='row'>
-                                                                                <div class='col-md-3'>
-                                                                                          
-                                                                                </div>
+                                                  <div class='container-fluid'>
+                                                            <div class='row'>
+                                                                      <div class='col mb-1'>
+                                                                                <label for="generalQueryBox" class="col-form-label text-dark">Search for:</label>
+                                                                                <input type="text" class="form-control" id="generalQueryBox"  value='' required>
+                                                                                <div class='invalid-feedback'>Please enter a search query!</div>
                                                                       </div>
                                                             </div>
+
+                                                            <div class='row'>
+                                                  {{#each searchParams}}
+
+                                                            
+                                                            <div class='col-md-3 searchCategoryContainer'>
+                                                            <div class="input-group mb-3">
+                                                                      <div class="input-group-prepend">
+                                                                                <label class="input-group-text" for="selectCategory">Category</label>
+                                                                      </div>
+                                                            
+                                                            <select class="custom-select" id="selectCategory">
+                                                                      {{#each categories}}
+                                                                      <option value={{.}}type='button' class="dropdown-item">{{.}}</option>
+                                                                      {{/each}}
+                                                            </select>
+                                                            </div>
+
+                                                  <div class='col-md-3 searchMonthContainer'>
+
+                                                                      <div class="input-group mb-3">
+                                                                                <div class="input-group-prepend">
+                                                                                          <label class="input-group-text" for="selectMonth">Month</label>
+                                                                                </div>
+                                                                      
+                                                                      
+                                                                      
+                                                                      
+                                                                                <select class="custom-select" id="selectMonth">
+                                                                                          {{#each months}}
+                                                                                          <option value={{.}}type='button' class="dropdown-item">{{.}}</option>
+                                                                                          {{/each}}
+                                                                                </select>
+                                                                                
+                                                                      </div>
+                                        
+                                                  </div>
+                                                  <div  class='col-md-3 searchYearContainer'>
+                                                  
+                                                  
+                                                            <div class="input-group mb-4">
+                                                                      <div class="input-group-prepend">
+                                                                                <label class="input-group-text" for="selectYear">Year</label>
+                                                                      </div>
+
+                                                                      <select class="custom-select" id="selectYear">
+                                                                                {{#each years}}
+                                                                                <option value={{.}}type='button' class="dropdown-item">{{.}}</option>
+                                                                                {{/each}}
+                                                                      </select>
+                                                            
+                                                            </div>
+                                                  </div>
+                                                  <div class='col-md-3 searchEventContainer'>
+
+                                                            <div class="input-group mb-3">
+                                                                      <div class="input-group-prepend">
+                                                                                <label class="input-group-text" for="selectType">Types</label>
+                                                                      </div>
+
+                                                                      <select class="custom-select" id="selectType">
+                                                                                {{#each types}}
+                                                                                <option value={{.}}type='button' class="dropdown-item">{{.}}</option>
+                                                                                {{/each}}
+                                                                      </select>
+                                                            
+                                                            </div>
+                                                  </div>
+                                                  {{/each}}
+
+                                                            </div>
+                                                            
+                                                  </div>
                                                             <button onclick='form_validation()'type="submit" class="btn searchButton">Search</button>
                                                             <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
                                                   </form>
                                                   
                                                   </div>
-                                                  {{!-- <div class="modal-footer">
-                                                            
-                                                            <button type="submit" class="btn searchButton">Search</button>
-                                                  </div> --}}
+                                                  
                                         </div>
                                         
                               </div>
@@ -545,17 +503,18 @@
           </div>
                     </div>
                     <table class='table table-dark table-striped resultsTable'>
-                              <thead>
-                                        <tr>
-                                                
-                                        </tr>
-                                        
-                              </thead>
+                             
+                             
                               <tbody>
-                                        
+                                        <tr id='resultsTableHeader' class='underlineSelection'>
+                                                 
+                                                  <td >Location</td>
+                                                  <td>Event</td>
+                                                  <td >Source</td>
+                                        </tr>
                     {{#each eventList}}
                     <tr class='underlineSelection'>
-                    
+                              
                               <td>{{eventLocation}}</td>
                               <td>{{eventName}}</td>
                               <td>{{eventLinks}}</td>
@@ -576,4 +535,60 @@
          
           {{/if}}
           
+          {{#if article}}
+          <div class='row container-fluid bg-dark me-0 ms-0'>
+                    <div class='col-12'>
+                              <nav style='--bs-breadcrumb-divider: ">";' aria-label='breadcrumb navigation'> 
+                                        <ol class='breadcrumb'>
+                                                  <li class='breadcrumb-item'><a href='/index.html'>Home</a></li>
+                                                  <li class='breadcrumb-item'><a href='../../news/News.html'>News</a></li>
+                                                  <li class='breadcrumb-item active' aria-current='page'>{{articleTitle}}</li>
+                                        </ol>
+                              </nav>
+                    </div>
+          </div>
+          <div class='row container-fluid bg-dark p-3 me-0 ms-0 h-100'>
+                    
+                    <div class='col-lg-4'>
+                              <figure class='figure'>
+                              <img src={{articleImage}} class='figure-img img-fluid rounded mt-5' alt="article Image">
+                              <figcaption aria-label='article image caption' class='figure-caption rounded p-3'>
+                                        {{articleCaption}}
+                              </figcaption>
+                              </figure>
+                    </div>
+                    
+                    <div class='col-lg-8 bg-dark'>
+                              <div class='col-12 mb-5'>
+
+                              </div>
+                    <article class='container-fluid bg-dark'>
+                              {{#if articleParts}}
+                              
+                                        
+                              <h2>{{articleTitle}}</h2>
+                              <div class='col-12 bg-dark p-5 articlePartContainer'>
+                              {{#each articleParts}}
+                              
+                              <div class='col-12 bg-light mt-1 mb-1 p-3 rounded'>
+                                      
+                                        {{articlePart}}
+                                      
+                              </div>
+                            
+                              
+                              {{/each}}
+                              </div>
+                    </div>
+          </div>
+                              
+          <div class='col-12'>
+
+          </div>
+                              {{/if}}
+          </article>
+                              
+          </div>
+          </div>
+          {{/if}}
 </main>
