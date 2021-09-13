@@ -505,7 +505,14 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 {
           border-radius: 8px;
 }
-
+#mapHeadline
+{
+          font-family:judoFont;
+}
+#dojoListHeadline
+{
+          font-family:judoFont; 
+}
 .joinButton
 {
           background-color:#973640;
