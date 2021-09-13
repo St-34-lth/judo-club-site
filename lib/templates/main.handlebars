@@ -1,5 +1,9 @@
 <main>
-         
+<!-- each part in the this file is filled only if the conditional is found (or not found alternatively) by Handlebars. I did this to avoid using multiple templates -->
+<!-- Certain sections contain a handlebars loop that inserts that section as many times as elements in the data object passed through
+the handlebars compile function. You should read this together with the base.js as all handlebars variables used can be found there with their contents. -->
+          
+<!-- news page -->
           {{#if news}}
 
           <div class='container-fluid px-4'>
@@ -10,13 +14,14 @@
                     </div>
                     <div class='bg-dark row mt-0  gx-5 gy-3'>
                               <div class='col-sm-2'>
-                                        
+                                       
                               </div>
                               <div class='col-sm-8 ms-3'>
                                         <div class='row me-4  mt-1'>
+                                                  <!-- handlebars loop to insert news items -->
                                         {{#each newsList}}
                                         
-                                        
+                                        <!-- custom made bootstrap card like component made by using the figure element -->
                                         <div class='col-lg-6 position-relative  mt-1 bg-dark mb-1  text-light rounded-3 newsItem'>
                                                   <div class='row p-1 border bg-light rounded-3 newsItemSelected newsItemContainer'>
                                                   
@@ -63,10 +68,12 @@
 
           {{/if}}
 
+<!-- media page -->
           {{#if media}}
           
           <div id='main-media-container' class='container-fluid bg-dark bg-light'>
                     <div class='row g-2 justify-content-center'>
+                              <!-- handlebars loop that inserts media elements -->
                               {{#each mediaList}}
                               <div class="col-sm-8 rounded-2">
                                         <h2 class='mediaHeadline'>{{mediaTitle}}</h2>
@@ -85,14 +92,15 @@
           </div>
 
           {{/if}}
-
+<!-- home page -->
           {{#if home}}
-          
+          <!-- This page is separated into one main container and three columns, each contains a type of featured piece. -->
           <div id='home-container' class='container-fluid w-100 p-0 text-center'>
                     <div class='row g-2 justify-content-space-between align-items-center bg-dark rounded-2'>
                               
                               <div class='col-md-2 leftMainCol' >
                                         <div class='row p-3'>
+                                                  <!-- handlebars nested loop for leftList items   -->
                                                   {{#each leftList}}
                                                   
                                                   <div class='col mb-5 ms-1 leftItem'>
@@ -100,7 +108,7 @@
                                                             <div class="card rounded-4  bg-light">
                                                             <img src={{leftItemImg}}  class='rounded-2 leftItemImg'alt='{{leftItemImgAltTxt}}'>
                                                                       <div class="card-body">
-                                                                     
+                                                                     <!-- nested loop searching for items to insert in the card-body  -->
                                                                                 {{#itemContent}}
                                                                                 {{{item}}}
                                                                                 {{/itemContent}}
@@ -122,17 +130,17 @@
                                                   
                                                            
                                                   <div class='row p-2'>
-                                                           
+                                                           <!-- two handlebars loops,to handle two types (or only one of them) of elements in one row   -->
                                                   {{#each mainList}}
                                                   
-                                                 <div class='bg-transparent col-sm-6 mt-2 align-items-center news-col'>
+                                                 <div class='bg-transparent col-sm-6 mt-2 align-items-center mainItem'>
                                                             {{{mainListItem}}}
                                                   
                                                   </div>
                                                   
                                                   {{/each}}
                                                   {{#each anchorItems}}
-                                                  <div style='height:auto;' class='col-sm-6 pb-2 news-col mt-2 text-align-center'>
+                                                  <div style='height:auto;' class='col-sm-6 pb-2 mainItem mt-2 text-align-center'>
                                                   <div class='row justify-content-center align-items-center'>
                                                             <div class='col-sm-6 mb-0'>
                                                             <h2 class='centreAnchorItemText'>{{{anchorText}}}</h2>
@@ -153,7 +161,7 @@
                               </div>
                              
                               <div class='col-md-2 rightMainCol'>
-                              
+                              <!-- Similar loop to leftcolumn's every item on the right column is a bootstrap-card with the exception of calendar which is highly customized-->
                                         {{#each rightList}}
                                         <div class='row ms-0 p-3'>
                                                   <div class='col-sm-6 '>
@@ -164,10 +172,11 @@
                               
                                         {{#itemContent}}
                               {{{item}}}
-
+<!-- Handlebars conditional and loops to handle calendar card and its details  -->
                               {{#if calendar}}
                               <div class='row'>
                                         <div  id='calendarHeadMonth' class='calendarHead col'>
+                                                  <!-- buttons handle functionality through base.js  -->
                                                   <div class='col-sm-1 d-inline'> <button onclick='prevMonth();' class='btn  prevButton' type='button'aria-label='calendar button previous month'></button></div>
                                                   <div  id='calMonthValue' class='col-sm-1 d-inline'>Month</div>
                                                   <div class='col-sm-1 d-inline'> <button aria-label='calendar button next month' class='btn  nextButton' onclick='nextMonth()'type='button'></button>
@@ -242,9 +251,9 @@
    
           {{/if}}
           
-          
+<!-- join us page -->
           {{#if join}}
-
+<!-- The join us page is structured in a one row  two column layout with the small column handling the table of dojo members and the big column handling the map, join text/button and message forms -->
           <div class="h-100 w-100 p-5 text-white bg-dark rounded-1">
                     
                     
@@ -261,7 +270,7 @@
                                                   
                                                   <tbody>
                                                             
-                                                           
+                                                           <!-- handlebars conditional and loop to insert dojo members -->
                                                                       {{#dojoList}}
                                                                       {{#each dojoMembers}}
                                                                       <tr>
@@ -275,8 +284,10 @@
                                         </table>
                               </div>
                               <div class='col-sm-9 mt-3 ms-0 p-1'>
+                                        
                                         <div class='row'>
-                                                  <div class='col-sm-12 mb-2 p-3'>
+                              <!-- Map frame to indicate each dojo member's location in the map(only used one for demonstration)-->
+                                                  <div class='col-sm-12 mb-2 p-3 rounded-2'>
                                                             <h2>Find our members Dojo's here</h2>
                                                             <map name='member-dojo-locations'><iframe id='mapLocation'
                                                                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1571.8909803424451!2d23.66695691968576!3d38.00554596598539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bb55418b99bf%3A0x72439d134dce5e86!2sHaidari%20Judo%20Academy!5e0!3m2!1sen!2sgr!4v1631187912765!5m2!1sen!2sgr"
@@ -284,6 +295,7 @@
                                                   </div>
                                         </div>
                                         <div class='row'>
+                                        <!--  text and join us button -->
                                         <div class='col-sm-12 align-self-end'>
                                         
                                         
@@ -294,8 +306,11 @@
                                                   </button>
                                                   
                                         </div>
+                                        <!-- Message us form and container -->
                                         <div class='row'>
+                                                  
                                                   <div class='col-sm-12 mt-5 ms-1 p-1 rounded-2 text-dark bg-light align-self-end'>
+                                                  
                                                   <form class='needs-validation' novalidate>
                                                   <div class='input-group mt-3 mb-3'>
 
@@ -305,6 +320,7 @@
                                                             <span class="input-group-text">Type your message here</span>
                                                             <textarea style="height:250px;"class="form-control"  aria-label="Message input area" required></textarea>
                                                   </div>
+                                        <!-- bootstrap's way of providing invalid feedback when something is wrong-->
                                                   <div class='invalid-feedback'>
                                                             Please enter appropriate entries.
                                                   </div>
@@ -320,7 +336,7 @@
                               </div>
                               </div>
                    
-                    <!-- Join Modal -->
+                    <!-- Join Modal popup on button, similar to message function but only shows when the button is clicked -->
                     <div class="modal fade" id="joinModal" tabindex="-1" aria-labelledby="joinModalLabel"
                               aria-hidden="true">
                               <div class="modal-dialog">
@@ -334,13 +350,13 @@
                                                             <form class='needs-validation' novalidate>
                                                                       <div class='row'>
                                                                                 <div class='col-sm-6'>
-                                                                      {{!-- First name --}}
+                                                                      <!-- First name -->
                                                                       <label class='col-form-label'for="fname">First name:</label>
                                                                       <input class='col-sm-6 col-form-control' value=''  type="text" id="fname" name="fname" required>
                                                                       <div class='invalid-feedback'>
                                                                                 Please enter a valid first name.
                                                                       </div><br><br>
-                                                                      {{!-- Last name --}}
+                                                                      <!-- Last name -->
                                                                       <label class='col-form-label' for="lname">Last name:</label>
                                                                       
                                                                       <input class='col-sm-6 col-form-control' type="text" id="lname" name="lname" required>
@@ -351,7 +367,7 @@
                                                                       </div>
                                                                       
                                                                       <div class='col-sm-6'>
-                                                                      {{!-- Email --}}
+                                                                      <!-- Email -->
                                                                       <label class='col-form-label' for="email">Email:</label>
                                                                       <input class='col-sm-6 col-form-control' type="text" id="email" name="email" required>
                                                                       <div class='invalid-feedback'>
@@ -359,7 +375,7 @@
                                                                       </div>
                                                                       <br><br>
 
-                                                                      {{!-- Dojo --}}
+                                                                      <!-- Dojo -->
                                                                       <label class='col-form-label' for="dojo">Dojo:</label>
                                                                       <input class='col-sm-6 col-form-control' type="text" id="dojo" name="dojo">
                                                                       <br><br>
@@ -368,6 +384,7 @@
                                                                       <p>Click the "Submit" button to complete your application form.</p>
 
                                                                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                      <!-- join us form validation -->
                                                                       <button id='submitJoinBtn' onclick='form_validation()' type="submit" class="btn">Submit</button>
                                                           
                                                             </form>
@@ -386,7 +403,7 @@
           {{/if}}
           
 {{#if results}}
-
+<!-- results page -->
           <div class='container-fluid bg-dark resultsContainer'>
                     <div class='row'>
                               <div class='col-12'>
@@ -398,7 +415,7 @@
                               
                                         
  
-
+<!-- search modal popup when search button is clicked -->
           <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModal" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                               <div class="modal-content">
@@ -417,8 +434,9 @@
                                                                                 <div class='invalid-feedback'>Please enter a search query!</div>
                                                                       </div>
                                                             </div>
-
+                                                  <!--  search parameters section in the modal -->
                                                             <div class='row'>
+                                                  <!-- handlebars nested loops to insert search parameter details  -->
                                                   {{#each searchParams}}
 
                                                             
@@ -490,6 +508,8 @@
                                                             </div>
                                                             
                                                   </div>
+                                                            <!-- search validation -->
+                                                            
                                                             <button onclick='form_validation()'type="submit" class="btn searchButton">Search</button>
                                                             <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
                                                   </form>
@@ -502,6 +522,7 @@
                     </div>
           </div>
                     </div>
+                    <!-- table of results for a supposed outcome etc, now showing 10 example results to demonstrate results --> 
                     <table class='table table-dark table-striped resultsTable'>
                              
                              
@@ -512,6 +533,8 @@
                                                   <td>Event</td>
                                                   <td >Source</td>
                                         </tr>
+                                        <!-- handlebars loop over events to provide results in the table -->
+                                         
                     {{#each eventList}}
                     <tr class='underlineSelection'>
                               
@@ -534,8 +557,9 @@
           </div>
          
           {{/if}}
-          
+<!-- article page -->
           {{#if article}}
+          <!-- the article page is structured in a two by two row column section. Top row contains breadcrubms for user navigation. The bottom row contains article details/text --> 
           <div class='row container-fluid bg-dark me-0 ms-0'>
                     <div class='col-12'>
                               <nav style='--bs-breadcrumb-divider: ">";' aria-label='breadcrumb navigation'> 
@@ -562,15 +586,16 @@
                               <div class='col-12 mb-5'>
 
                               </div>
+          <!-- Handlebars conditional and loop for each article part to be inserted in its own container for styling purposes  -->
                     <article class='container-fluid bg-dark'>
                               {{#if articleParts}}
                               
                                         
                               <h2>{{articleTitle}}</h2>
-                              <div class='col-12 bg-dark p-5 articlePartContainer'>
+                              <div class='col-lg-12 bg-dark p-5 articlePartContainer'>
                               {{#each articleParts}}
                               
-                              <div class='col-12 bg-light mt-1 mb-1 p-3 rounded'>
+                              <div class='col-lg-12 bg-light mt-1 mb-1 p-3 articlePartItem rounded'>
                                       
                                         {{articlePart}}
                                       

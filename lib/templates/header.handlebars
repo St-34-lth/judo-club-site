@@ -1,9 +1,9 @@
 <header>
 
-          
+                    <!-- Header navbar wrapped with a top & bottom dark background divs for styling purposes  -->
           <div id='top' class='container-fluid row bg-dark rounded-1 headerNavBarBorder ms-0 me-0'></div>
 
-          <nav id='navigation-element' class="navbar navbar-expand-lg rounded-1 navigationBar" aria-label="navigation bar">
+          <nav  class="navbar sticky-top navbar-expand-lg rounded-1 navigationBar" aria-label="top-navigation-bar">
                     <div class="container-fluid navBarButtonContainer">
                               <button class="navbar-toggler collapsed" style='width:60px; height:34px;'type="button" data-bs-toggle="collapse"
                                         data-bs-target="#judonavbar" aria-controls="judonavbar"
@@ -49,7 +49,7 @@
           </nav>
 
           <div id='bottom' class='container-fluid ms-0 me-0 row justify-content-center bg-dark rounded-1 headerNavBarBorder'></div>
-         
+         <!-- clickable dojo logo wrapper -->
           <div  class='container-fluid row justify-content-center align-items-start bg-dark rounded-1 headerImageContainer'>
                     <a aria-label='logo-anchor-quicklink-home'  class='me-1  headerImageAnchor' href="/">
                     <img alt='logo image' src='/assets/images/Home_intro.jpg'
@@ -57,7 +57,9 @@
                     </a>
                   
           </div>
+          <!-- handlebars conditional used to remove carousel in case the user is navigating the news page   -->
           {{^news}}
+          <!-- carousel items can be changed through base.js   -->
           <div aria-label='carousel slideshow with latest 3 newspieces' class='container-fluid bg-dark newsReelBorder'>
                     <div  class='container-sm bg-dark newsReelContainer'>
           

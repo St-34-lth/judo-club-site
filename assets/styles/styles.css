@@ -7,7 +7,7 @@ html,body {
     font: 1.2rem/1.5 rem; 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
+          /* custom font for traditional japanese look */
 @font-face
 {
           font-family: judoFont;
@@ -21,17 +21,42 @@ footer{
 iframe[seamless] {
   display: block;
 }
-map
-{
-          border-radius: 10px;
-}
+
+
 
 
 
 /* Index/Home template styling*/
 
+          /* Arrow buttons for calendar card */
+.prevButton
+{
+          background-image: url(/assets/images/arrow-left-circle-fill.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+}
+.nextButton
+{
+          background-image: url(/assets/images/arrow-right-circle-fill.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          
+}
 
-.news-col
+.centreMainCol
+{
+          align-self: flex-start;
+}
+.rightMainCol
+{
+          align-self:flex-start;
+}
+.leftMainCol
+{
+          align-self:flex-start;
+}
+          /* CSS animation for centre column items */
+.mainItem
 {
           
           background-size:cover;
@@ -53,29 +78,15 @@ map
           transition-property: box-shadow, transform;
           
 }
-.news-col:hover, .news-col:active, .news-col:focus 
+.mainItem:hover, .mainItem:active, .mainItem:focus 
 {
          
           box-shadow: 0 10px 10px -10px rgba(255, 255, 255, 0.5);
           -webkit-transform: scale(1.05);
           transform: scale(1.05);
-          /* box-shadow: 0 4px 8px 0 rgba(173, 31, 31, 0.37), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          transition:1s box-shadow; */
+          
 }
-
-.centreMainCol
-{
-          align-self: flex-start;
-}
-.rightMainCol
-{
-          align-self:flex-start;
-}
-.leftMainCol
-{
-          align-self:flex-start;
-}
-
+          /* Different styling if the inserted central column element is a link  */
 .centreAnchorItemText
 {
           color:#973640;
@@ -86,16 +97,52 @@ map
           margin-top: 10px;        
 }
 
+          /* left column items styling and hover effect */
+.leftItem
+{
+
+          opacity: 0.5;
+          position:relative;
+
+}
+.leftItem:hover
+{
+          opacity: 1;
+          transition:1s opacity;
+}
+.leftItem > .card > .card-body > .card-text 
+{
+                    
+          color:#ff0000;
+          font-size:xx-large;
+          text-decoration: none;
+ 
+}
+
 .rightItem
 {
           background-color: var(--bs-white);
           width:13rem;
 }
+
+          /* Different styling if the inserted central column element is a link  */
+.centreAnchorItemText
+{
+          color:#973640;
+          font-family: judoFont;
+}
+.centreAnchorElmt > img
+{
+          margin-top: 10px;        
+}
+
+
 .recentEventsCard a 
 {
           text-decoration: none;
           color:#973640
 }
+          /* calendar card styling   */
 .calendarHead
 {
           background-color: var(--bs-light);
@@ -109,114 +156,19 @@ map
 {
           text-align:left;
 }
-.leftItem
-{
-
-          opacity: 0.5;
-          position:relative;
-
-}
-.leftItem:hover
-{
-          opacity: 1;
-          transition:1s opacity;
-}
-
-.leftItem > .card > .card-body > .card-text 
-{
-                    
-          color:#ff0000;
-          font-size:xx-large;
-          text-decoration: none;
- 
-}
 
 
+/* Header styling  */
 
-/* general bootstrap elements styling*/
-.card-title   
-{
-          font: 1rem/1.5 judoFont;
-}
-
-
-/* Header template content styling  */
-
-/* navigation bar */
+          /* navigation bar */
 .nav-link{
           color:white;
          font: 1rem/1.5 judoFont;
 }
+          /*custom navbar styles & effects  */
 a.nav-link:hover, a.nav-link:active, a.nav-link.active
 {
           color: var(--bs-black) ;
-}
-
-
-.newsReelBorder
-{
-         border-bottom:25px solid #973640;
-}
-.headerImageContainer
-{
-          width:100%;
-          height:300px;
-          padding-bottom:10px;
-          margin:auto;
-          text-align: center;
-          align-items: center;
-          
-          background-size: 100%;
-          background-position: 50%;
-          background-repeat:no-repeat;
-          border-bottom:5px solid #973640;
-          background-image:url('../../assets/images/dicky-dojo.jpg')
-}
-.headerImage
-{
-         
-          width:75px;
-          height:75px;
-          border-radius:50px;
-          padding:0;
-         
-}
-
-
-.carousel
-{
-         
-          height:250px;
-}
-.carousel-caption
-{
-          background-color:#97364073;
-          height:50px;
-          padding:0;
-          margin:auto;
-          width:40%;
-}
-.carousel-item > img 
-{
-          margin-right:auto;
-          margin-left:auto;
-          height:250px;
-          width:640px;
-
-}
-
-#carousel-controls
-{
-          /* position:relative; */
-          /* bottom:60px; */
-          opacity:0.4;
-          background-color:rgb(0,0,0);
-}
-#caption
-{
-          /* position:relative; */
-          /* top:10px;
-          left:10px; */
 }
 #judoButton
 {
@@ -233,6 +185,73 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 {
          height:20px;
 }
+          /* Bootstrap's carousel custom styling */
+.newsReelBorder
+{
+         border-bottom:25px solid #973640;
+}
+.carousel
+{
+         
+          height:250px;
+}
+.carousel-caption
+{
+          background-color:#97364073;
+          height:50px;
+          padding:0;
+          margin:auto;
+          width:40%;
+}
+.carousel-caption > a 
+{
+          text-decoration: none;
+          color:white;
+          
+}
+#carousel-controls
+{
+          
+          opacity:0.4;
+          background-color:rgb(0,0,0);
+}
+.carousel-item > img 
+{
+          margin-right:auto;
+          margin-left:auto;
+          height:250px;
+          width:640px;
+
+}
+
+          /* Grayscale Dojo image container styling  */
+.headerImageContainer
+{
+          width:100%;
+          height:300px;
+          padding-bottom:10px;
+          margin:auto;
+          text-align: center;
+          align-items: center;
+          background-size: 100%;
+          background-position: 50%;
+          background-repeat:no-repeat;
+          border-bottom:5px solid #973640;
+          background-image:url('../../assets/images/dicky-dojo.jpg')
+}
+          /* Dojo logo overlayed on top of the Dojo image  */
+.headerImage
+{
+         
+          width:75px;
+          height:75px;
+          border-radius:50px;
+          padding:0;
+         
+}
+
+
+
 /* media page styling */
 
 .mediaItem > img
@@ -337,7 +356,14 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           background-color: #973640b9;
 
 }
-
+.newsReadMore
+{
+         
+          text-align:center;
+          background-color:#3b3b3bd8;
+          z-index:2;
+}
+          /*  news piece caption custom read more arrow animation  */
 .animateButtonForward
 {
   display: inline-block;
@@ -355,7 +381,7 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
   -webkit-transform: translateX(8px);
   transform: translateX(8px);
 }
-
+          /* news piece custom hover effect */
 .newsItemSelected {
   
   vertical-align: middle;
@@ -370,13 +396,7 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 .newsItemSelected:hover, .newsItemSelected:focus, .newsItemSelected:active {
   box-shadow: 0 10px 10px -10px rgb(255, 255, 255);
 }
-.newsReadMore
-{
-         
-          text-align:center;
-          background-color:#3b3b3bd8;
-          z-index:2;
-}
+
 
 /* results page styling  */
 #eventList
@@ -388,10 +408,11 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 {
           color:white;
 }
+          /* hover table row effect */
 #eventList:hover
 {
-           box-shadow: 0 4px 8px , 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-           transition:1s box-shadow;
+          box-shadow: 0 4px 8px , 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          transition:1s box-shadow;
 }
 
 
@@ -402,6 +423,7 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           text-align:center;
           
 }
+          /* avoiding the hover effect on the table  header entries*/
 #resultsTableHeader
 {
           font-size:x-large;
@@ -416,16 +438,8 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           -webkit-transition-property:0s;
           transition-property:unset;
 }
-.tableEventRow
-{
-          opacity:0.5;
-}
-.tableEventRow:hover
-{
-          opacity:1;
-          transition: 1s opacity;
-}
 
+/* CSS to highlight hovered table row */
 .underlineSelection
 {
    
@@ -480,7 +494,12 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 }
 
 
+/* contact us page styling */
 
+#mapLocation
+{
+          border-radius: 8px;
+}
 
 .joinButton
 {
@@ -499,31 +518,8 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           color:white;
 }
 
-.prevButton
-{
-          background-image: url(/assets/images/arrow-left-circle-fill.svg);
-          background-repeat: no-repeat;
-          background-position: center;
-}
-.nextButton
-{
-          background-image: url(/assets/images/arrow-right-circle-fill.svg);
-          background-repeat: no-repeat;
-          background-position: center;
-          
-}
-/* Footer */
-
-.footerListContainer
-{
-          text-align:left;
-}
-.footerListContainer ul li 
-{
-          list-style-type:none;
-          display:inline-block
-}
- .headerImageAnchor 
+/* article page styling  */
+.headerImageAnchor 
  {
            max-width:1484px;
  }
@@ -533,12 +529,7 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
            font-family:judoFont;
  }
 
- .carousel-caption > a 
- {
-           text-decoration: none;
-           color:white;
-            
- }
+
  .figure-caption
  {
            background-color:#973640;
@@ -550,6 +541,19 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           font-size:large;
 }
 
+/* Footer */
+
+.footerListContainer
+{
+          text-align:left;
+}
+.footerListContainer ul li 
+{
+          list-style-type:none;
+          display:inline-block
+}
+ 
+/* css styling for responsiveness not provided by bootstrap */
 @media only screen and (max-width:767px)  
 {
           
@@ -562,10 +566,8 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           
           .newsFigure
           {
-                    
+                   
                     height:auto;
-                    
-                    
 
           }
 
@@ -593,15 +595,12 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           {
                     align-self:flex-start;
                     order:2;
-                    
-
+          
           }
           .rightMainCol
           {
                     align-self:flex-start;
-                    
                     order:3;
-                    
                     
           }
           .leftItem > .card >img 
@@ -612,13 +611,14 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           .leftItem > .card > .card-body > .card-text 
           {
                     font-size: medium;
-                    
-                   
+          }
+          .card-title   
+          {
+                    font: 1rem/1.5 judoFont;
           }
           .rightItem
           {
                     width:100%;
-                    
           }
           
           .headerMainImage
@@ -631,4 +631,21 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
                     order:2;
           }
 
+                    
+          
+          .articlePartContainer
+          {
+                    font-size:medium;
+                    width:400px;
+                    margin-left:-35%;
+                    
+          }
+          .articlePartItem
+          {
+                    width:100%;
+                    
+          }
+
+
 }
+
