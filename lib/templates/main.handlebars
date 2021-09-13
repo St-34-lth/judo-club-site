@@ -133,9 +133,18 @@ the handlebars compile function. You should read this together with the base.js 
                                                            <!-- two handlebars loops,to handle two types (or only one of them) of elements in one row   -->
                                                   {{#each mainList}}
                                                   
-                                                 <div class='bg-transparent col-sm-6 mt-2 align-items-center mainItem'>
-                                                            {{{mainListItem}}}
+                                                           
+                                                            
+                                                            
+                                                        <div class='row'>
+                                                  <div class='text-light text-break text-center col-sm-12 mainListItemText'>
+                                                            {{{mainListItemText}}}
+                                                  </div>
+                                                 <div class='bg-transparent col-sm-12 mt-2 align-items-center mainItem'>
                                                   
+                                                           {
+                                                            {{{mainListItem}}}
+                                                  </div>
                                                   </div>
                                                   
                                                   {{/each}}
@@ -571,7 +580,7 @@ the handlebars compile function. You should read this together with the base.js 
                               </nav>
                     </div>
           </div>
-          <div class='row container-fluid bg-dark p-3 me-0 ms-0 h-100'>
+          <div class='row container-fluid bg-dark p-3 ms-0 h-100'>
                     
                     <div class='col-lg-4'>
                               <figure class='figure'>
@@ -587,7 +596,7 @@ the handlebars compile function. You should read this together with the base.js 
 
                               </div>
           <!-- Handlebars conditional and loop for each article part to be inserted in its own container for styling purposes  -->
-                    <article class='container-fluid bg-dark'>
+                    <article class='container-lg-12 bg-dark'>
                               {{#if articleParts}}
                               
                                         
