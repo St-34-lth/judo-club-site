@@ -1,13 +1,18 @@
 /* general page styling */
-
+:root
+{
+          --fontSize:1.0rem;
+}
 html,body {
     margin:0;
     padding:0;
     overflow-x:hidden;
-    font: 1.2rem/1.5 rem; 
+    font-size:var(--fontSize);
     font-family: -apple-system
 }
           /* custom font for traditional japanese look */
+          /* licensed to dadiomouse@gmail.com 
+          https://www.creativefabrica.com/product/japanese-2020/ref/74273/  */
 @font-face
 {
           font-family: judoFont;
@@ -16,15 +21,29 @@ html,body {
 footer{
           background-color: #973640;
           margin:auto;
+
           
 }
-iframe[seamless] {
+iframe[seamless] 
+{
   display: block;
 }
 
 
+.globalLgFont  
+{
+          font-size: 1.5rem;
+          
+}
+.globalMdFont
+{
+          font-size:1.2rem;
+}
 
-
+.globalSmFont
+{
+          font-size:1.0rem;
+}
 
 /* Index/Home template styling*/
 
@@ -64,7 +83,7 @@ iframe[seamless] {
           height:300px;
           border-radius: 3px;
           display:flex;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-family: -apple-system;
           margin:auto;
           justify-content: center;
           max-width: 900px;
@@ -86,6 +105,7 @@ iframe[seamless] {
           transform: scale(1.05);
           
 }
+
 .mainListItemText p
 {
           font-family: judoFont;
@@ -99,7 +119,8 @@ iframe[seamless] {
 }
 .centreAnchorElmt > img
 {
-          margin-top: 10px;        
+          margin-top: 10px;   
+          max-width:60%;     
 }
 
           /* left column items styling and hover effect */
@@ -166,7 +187,8 @@ iframe[seamless] {
 /* Header styling  */
 
           /* navigation bar */
-.nav-link{
+.nav-link
+{
           color:white;
          font: 1rem/1.5 judoFont;
 }
@@ -341,7 +363,7 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 }
 .newsFigure
 {
-          /* margin-bottom:-7%;
+          
           width:100%;
           height:260px; */
           max-height:80%;
@@ -476,20 +498,21 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 }
 .underlineSelection:hover:before, .underlineSelection:focus:before, .underlineSelection:active:before 
 {
-   -webkit-transform: translateY(0);
-  transform: translateY(0);
-  border-width: 4px;
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+          border-width: 4px;
 }
 .resultsContainer
 {
           padding-bottom:1%;
+
           
 
 }
 .resultsContainer h3,  h2
 {
           color:#973640;
-          font-family: -apple-system;
+          font-family: judoFont;
          
 }
 .searchButton
@@ -564,7 +587,7 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           list-style-type:none;
           display:inline-block
 }
- 
+           
 /* css styling for responsiveness not provided by bootstrap */
 @media only screen and (max-width:767px)  
 {
@@ -643,15 +666,20 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
                     order:2;
           }
 
+                  .centreAnchorElmt img
+          {
+                    max-width:60%;
                     
+          }  
           
           
 
 
 }
 
-@media only screen and (max-width:410px)  {
-.articlePartContainer
+@media only screen and (max-width:410px)  
+{
+          .articlePartContainer
           {
                     font-size:medium;
                     width:400px;
@@ -663,4 +691,10 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           {
                     width:80%;
                     
-          }}
+          }
+          .centreAnchorElmt img
+          {
+                    max-width:60%;
+                    
+          }
+}

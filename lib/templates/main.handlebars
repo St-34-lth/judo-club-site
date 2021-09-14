@@ -137,7 +137,7 @@ the handlebars compile function. You should read this together with the base.js 
                                                             
                                                             
                                                         <div class='row'>
-                                                  <div class='text-light text-break text-center col-sm-12 mainListItemText'>
+                                                  <div class='text-light mt-5 text-break text-center col-sm-12 mainListItemText'>
                                                             {{{mainListItemText}}}
                                                   </div>
                                                  <div class='bg-transparent col-sm-12 mt-2 align-items-center mainItem'>
@@ -149,8 +149,8 @@ the handlebars compile function. You should read this together with the base.js 
                                                   
                                                   {{/each}}
                                                   {{#each anchorItems}}
-                                                  <div style='height:auto;' class='col-sm-6 pb-2 mainItem mt-2 text-align-center'>
-                                                  <div class='row justify-content-center align-items-center'>
+                                                  <div style='height:auto;' class='row justify-content-center align-items-center mt-5 mb-5 pb-2 mainItem text-align-center'>
+                                                  
                                                             <div class='col-sm-6 mb-0'>
                                                             <h2 class='centreAnchorItemText'>{{{anchorText}}}</h2>
                                                             </div>
@@ -158,12 +158,12 @@ the handlebars compile function. You should read this together with the base.js 
                                                             
                                                             <div class='col-sm-12 text-align-center centreAnchorContainer'>
                                                                       
-                                                                      <a class='mx-auto centreAnchorElmt'href={{anchorRef}} aria-label={{anchorAltText}}>
-                                                                                <img class='d-block mx-auto rounded img-fluid' src='{{anchorUrl}}'>
+                                                                      <a class='mx-auto  centreAnchorElmt'href={{anchorRef}} aria-label={{anchorAltText}}>
+                                                                                <img class='d-block mx-auto rounded img-fluid ' src='{{anchorUrl}}'>
                                                                       </a>
                                                             </div>
-                                                            </div>
                                                   </div>
+                                                  
                                                   </div>
                                                   {{/each}}
                                                   
