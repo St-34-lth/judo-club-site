@@ -3,12 +3,13 @@
 {
           --fontSize:1.0rem;
 }
-html,body {
-    margin:0;
-    padding:0;
-    overflow-x:hidden;
-    font-size:var(--fontSize);
-    font-family: -apple-system
+html,body 
+{
+          margin:0;
+          padding:0;
+          overflow-x:hidden;
+          font-size:var(--fontSize);
+          font-family: -apple-system
 }
           /* custom font for traditional japanese look */
           /* licensed to dadiomouse@gmail.com 
@@ -18,15 +19,14 @@ html,body {
           font-family: judoFont;
           src:url('/assets/fonts/japanese_2020/JAPANESE_2020.ttf')
 }
-footer{
+footer
+{
           background-color: #973640;
           margin:auto;
-
-          
 }
 iframe[seamless] 
 {
-  display: block;
+          display: block;
 }
 
 
@@ -466,7 +466,7 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
           transition-property:unset;
 }
 
-/* CSS to highlight hovered table row */
+/* CSS to highlight hovered table row at results page */
 .underlineSelection
 {
    
@@ -591,14 +591,14 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 /* css styling for responsiveness not provided by bootstrap */
 @media only screen and (max-width:767px)  
 {
-          
+          /* header logo image */
           .headerImage 
           {
                     width:60px;
                     height:60px;
                     
           }
-          
+          /* news figure container image and caption in judo news */
           .newsFigure
           {
                    
@@ -622,10 +622,18 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
                     width:80%
                     
           }
+
+          /* styling for home page elements */
           .centreMainCol
           {
                     order:1;
           }          
+          .centreAnchorElmt img
+          {
+                    max-width:60%;
+                    
+          }  
+          
           .leftMainCol
           {
                     align-self:flex-start;
@@ -661,17 +669,14 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
                     width:50px;
                     height:50px;
           }
+
+          /* styling for contact us page */
           #dojoListRow
           {
                     order:2;
           }
 
-                  .centreAnchorElmt img
-          {
-                    max-width:60%;
-                    
-          }  
-          
+         
           
 
 
@@ -679,6 +684,9 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
 
 @media only screen and (max-width:410px)  
 {
+          /* styling for mobile phone use-cases */
+
+          /* article page */
           .articlePartContainer
           {
                     font-size:medium;
@@ -692,6 +700,8 @@ a.nav-link:hover, a.nav-link:active, a.nav-link.active
                     width:80%;
                     
           }
+
+          /* home page */
           .centreAnchorElmt img
           {
                     max-width:60%;
