@@ -1,2 +1,2 @@
 # web_dev_judo-club-site
- individual project
+A web site mockup of a local martial arts dojo. 
